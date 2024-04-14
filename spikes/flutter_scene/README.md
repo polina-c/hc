@@ -10,3 +10,25 @@ This demo was featured as part of Flutter Forward 2023! Watch the keynote here:
 * The underlying Flutter API used to build and render Scene nodes is _not_ supported and _will_ break repeatedly. Eventually, the API will be removed/replaced altogether.
 
 https://user-images.githubusercontent.com/919017/215621872-ef3dac49-22a0-476e-8fb9-d560121a3c17.mov
+
+## Steps to build
+
+Configure environment for [engine](https://github.com/flutter/flutter/wiki/Setting-up-the-Engine-development-environment) and [flutter](https://github.com/flutter/flutter).
+
+Then follow steps below.
+They are created by adding --enable-impeller-3d to gn in  https://github.com/flutter/flutter/wiki/Compiling-the-engine#compiling-for-ios-from-macos
+
+
+In engine\src, nongooglers remove --goma and -j200:
+0. glogin
+1. git pull upstream main (in src/flutter)
+2. gclient sync
+3. ./flutter/tools/gn --ios --simulator --unoptimized --enable-impeller-3d --simulator-cpu=arm64 --goma
+    Remove simulator for real device
+    --simulator-cpu=arm64 argument us for an arm64 Mac simulator to output to out/ios_debug_sim_unopt_arm64
+4. ./flutter/tools/gn --unoptimized --mac-cpu arm64 --goma --enable-impeller-3d
+5. ninja -C out/ios_debug_sim_unopt_arm64 -j200 && ninja -C out/host_debug_unopt_arm64 -j200
+   use out/host_debug_unopt_arm64  for real device
+
+
+
