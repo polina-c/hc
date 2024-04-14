@@ -1,3 +1,5 @@
+Copied from https://github.com/bdero/flutter-scene-example
+
 # Impeller Scene 3D Demo
 
 This demo was featured as part of Flutter Forward 2023! Watch the keynote here:
@@ -30,5 +32,11 @@ In engine\src, nongooglers remove --goma and -j200:
 5. ninja -C out/ios_debug_sim_unopt_arm64 -j200 && ninja -C out/host_debug_unopt_arm64 -j200
    use out/host_debug_unopt_arm64  for real device
 
+Then run flutter command:
+flutter run -d A28FBDE3-BF32-4345-8E3F-5F546FA60AE5 --local-engine=ios_debug_sim_unopt_arm64 --local-engine-host=host_debug_unopt_arm64
 
+Run `flutter devices` to get device id.
 
+This helps to troubleshoot simulator: https://stackoverflow.com/questions/77261779/ios-simulator-problem-failed-to-launch-ios-simulator-error-emulator-didnt-co
+
+Your 'engine' should be peer to flutter for this to work.
