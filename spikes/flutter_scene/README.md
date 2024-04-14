@@ -36,7 +36,8 @@ Then run flutter command:
 flutter run -d A28FBDE3-BF32-4345-8E3F-5F546FA60AE5 --local-engine=ios_debug_sim_unopt_arm64 --local-engine-host=host_debug_unopt_arm64
 
 Run `flutter devices` to get device id.
+Your 'engine' should be peer to flutter for this to work.
 
 This helps to troubleshoot simulator: https://stackoverflow.com/questions/77261779/ios-simulator-problem-failed-to-launch-ios-simulator-error-emulator-didnt-co
 
-Your 'engine' should be peer to flutter for this to work.
+This can help with scenec: https://discord.com/channels/608014603317936148/1173336353187041380/1229155174056988794
