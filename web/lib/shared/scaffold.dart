@@ -12,16 +12,33 @@ class AppScaffold extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Row(
-          children: <Widget>[
-            TextButton(onPressed: () {}, child: const Text('Happy Creek')),
-            TextButton(onPressed: () {}, child: const Text('Team')),
-          ],
+          children: AppRoutes.values
+              .map((r) => MenuItem(route: r, selected: route))
+              .toList(),
         ),
         centerTitle: false,
-        leadingWidth: 0,
+        automaticallyImplyLeading: false, // Remove back button
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: body,
+    );
+  }
+}
+
+class MenuItem extends StatelessWidget {
+  const MenuItem({super.key, required this.route, required this.selected});
+
+  final AppRoutes route;
+  final AppRoutes selected;
+
+  bool get _isSelected => route == selected;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed:
+          _isSelected ? null : () => Navigator.of(context).pushNamed(route.uri),
+      child: Text(route.display),
     );
   }
 }

@@ -1,9 +1,10 @@
 enum AppRoutes {
-  home(uri: '/'),
-  team(uri: '/'),
+  home(uri: '/', display: 'Happy Creek'),
+  team(uri: '/team', display: 'Team'),
   ;
 
   final String uri;
+  final String display;
 
-  const AppRoutes({required this.uri});
+  const AppRoutes({required this.uri, required this.display});
 }
