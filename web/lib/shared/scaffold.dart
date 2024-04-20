@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:web/shared/routes.dart';
 
+import 'styles.dart';
+
 class AppScaffold extends StatelessWidget {
   const AppScaffold(this.body, this.route, {super.key});
 
@@ -38,6 +40,7 @@ class MenuItem extends StatelessWidget {
     return TextButton(
       onPressed:
           _isSelected ? null : () => Navigator.of(context).pushNamed(route.uri),
+      style: _isSelected ? Styles.disabledSelected(context) : null,
       child: Text(route.display),
     );
   }

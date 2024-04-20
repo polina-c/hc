@@ -10,7 +10,11 @@ final routes = {
   AppRoutes.team: (context) => const TeamScreen(),
 };
 
-WidgetBuilder routeEntry(AppRoutes route) {
+WidgetBuilder routeEntry(String routeName) {
+  final route = AppRoutes.values.firstWhere(
+    (r) => r.uri == routeName,
+    orElse: () => AppRoutes.home,
+  );
   return (context) => AppScaffold(routes[route]!(context), route);
 }
 
@@ -26,7 +30,15 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: 'Happy Creek',
       initialRoute: AppRoutes.home.uri,
-      routes: routes.map((route, _) => MapEntry(route.uri, routeEntry(route))),
+      // Using this instead of [routes] to turn off animation.
+      onGenerateRoute: (settings) {
+        final routeName = settings.name ?? AppRoutes.home.uri;
+        return PageRouteBuilder(
+          pageBuilder: (context, __, ___) => routeEntry(routeName)(context),
+          transitionsBuilder: (_, __, ___, child) => child,
+          settings: settings,
+        );
+      },
     );
   }
 }
