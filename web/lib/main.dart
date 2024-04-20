@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:web/shared/scaffold.dart';
 
 import 'screens/home.dart';
 import 'screens/team.dart';
 import 'shared/routes.dart';
+import 'shared/scaffold.dart';
 
 final routes = {
   AppRoutes.home: (context) => const HomeScreen(),

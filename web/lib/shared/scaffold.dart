@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:web/shared/routes.dart';
 
+import 'routes.dart';
 import 'styles.dart';
 
 class AppScaffold extends StatelessWidget {

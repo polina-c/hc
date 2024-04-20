@@ -7,3 +7,7 @@ abstract class Styles {
         textStyle: const TextStyle(fontWeight: FontWeight.bold),
       );
 }
+
+abstract class Sizes {
+  static const markdownWidth = 500.0;
+}

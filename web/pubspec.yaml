@@ -1,5 +1,4 @@
-name: web
-description: "A new Flutter project."
+name: hc_web
 publish_to: 'none'
 version: 0.1.0
 
@@ -9,6 +8,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_markdown: ^0.7.1
+  url_launcher: ^6.2.6
 
 dev_dependencies:
   flutter_test:
