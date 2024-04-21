@@ -27,6 +27,7 @@ class AppMarkdown extends StatelessWidget {
             a: const TextStyle(
               color: Colors.blue,
               decoration: TextDecoration.underline,
+              decorationColor: Colors.blue,
             ),
             blockquote: const TextStyle(
               color: Colors.grey,
