@@ -15,6 +15,8 @@ class AppScaffold extends StatelessWidget {
       appBar: AppBar(
         title: Row(
           children: [
+            ImageIcon(const AssetImage('lib/assets/logo.png'),
+                color: Theme.of(context).colorScheme.primary),
             _AppBarItem(
               text: 'Happy Creek',
               type: AppBarTypes.title,

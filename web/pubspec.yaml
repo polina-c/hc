@@ -20,10 +20,12 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - lib/assets/logo.png
 
 flutter_launcher_icons:
   web:
     generate: true
-    image_path: "assets/icon.png"
+    image_path: "lib/assets/logo.png"
     background_color: "#FFFFFF"
     theme_color: "#009CFF"
