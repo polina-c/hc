@@ -8,7 +8,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const teamLink = '/#/team';
+    const teamLink = 'team';
     return AppMarkdown(
       '''
 **Happy Creek** aims to provide **emotional and
@@ -19,7 +19,9 @@ We are in the phase of shaping the vision and roadmap
 of the project. **Read more** in the
 [living doc](https://docs.google.com/document/d/1ZNrNoxZKZmkcF75ZyGUHrV3UPyJnhEjyVhh3ubYwXFM).
 
-[Our Team](/#/team)
+\v
+
+[Our Team]($teamLink)
 
     ''',
       onTapLink: {

@@ -22,7 +22,6 @@ class AppScaffold extends StatelessWidget {
                   ? null
                   : () => push(AppRoutes.home, context),
             ),
-            const SizedBox(width: Sizes.topBarSpace),
             ...AppRoutes.values
                 .map((r) => _MenuItem(route: r, selected: route)),
           ],
