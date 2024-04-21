@@ -8,10 +8,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const AppMarkdown('''
-Happy Creek aims to provide emotional and social education for elementary and middle scroll children via a role-playing computer game.
+**Happy Creek** aims to provide **emotional and
+social education** for elementary and middle
+scroll children via a **role-playing computer game**.
 
-We are in the phase of shaping the vision and roadmap of the project. Read more in the living doc.
-
+We are in the phase of shaping the vision and roadmap
+of the project. **Read more** in the
+[living doc](https://docs.google.com/document/d/1ZNrNoxZKZmkcF75ZyGUHrV3UPyJnhEjyVhh3ubYwXFM).
     ''');
   }
 }

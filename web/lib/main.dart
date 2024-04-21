@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../shared/theme.dart';
 import 'screens/home.dart';
 import 'screens/team.dart';
 import 'shared/routes.dart';
@@ -29,6 +30,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Happy Creek',
+      theme: appTheme,
       initialRoute: AppRoutes.home.uri,
       // Using this instead of [routes] to turn off animation.
       onGenerateRoute: (settings) {

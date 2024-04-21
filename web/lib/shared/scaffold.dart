@@ -22,7 +22,10 @@ class AppScaffold extends StatelessWidget {
         automaticallyImplyLeading: false, // Remove back button
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: body,
+      body: Padding(
+        padding: const EdgeInsets.only(top: Sizes.paddingAfterTopBar),
+        child: body,
+      ),
     );
   }
 }
