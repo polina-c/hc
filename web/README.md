@@ -1,3 +1,3 @@
 # web
 
-A new Flutter project.
+## Hosting

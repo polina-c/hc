@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 final appTheme = ThemeData(
   useMaterial3: true,
@@ -31,9 +30,3 @@ final appTheme = ThemeData(
       //   toolbarTextStyle: test,
       ),
 );
-
-// const _test = TextStyle(
-//   fontSize: 24,
-//   color: Colors.red,
-//   backgroundColor: Colors.cyan,
-// );
