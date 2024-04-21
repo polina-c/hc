@@ -15,7 +15,13 @@ class AppScaffold extends StatelessWidget {
       appBar: AppBar(
         title: Row(
           children: [
-            const _AppBarItem(text: 'Happy Creek', type: AppBarTypes.title),
+            _AppBarItem(
+              text: 'Happy Creek',
+              type: AppBarTypes.title,
+              onPressed: route == AppRoutes.home
+                  ? null
+                  : () => _push(AppRoutes.home, context),
+            ),
             const SizedBox(width: Sizes.topBarSpace),
             ...AppRoutes.values
                 .map((r) => _MenuItem(route: r, selected: route)),
@@ -44,12 +50,15 @@ class _MenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _AppBarItem(
-      onPressed:
-          _isSelected ? null : () => Navigator.of(context).pushNamed(route.uri),
+      onPressed: _isSelected ? null : () => _push(route, context),
       type: _isSelected ? AppBarTypes.menuSelected : AppBarTypes.menuClickable,
       text: route.display,
     );
   }
+}
+
+void _push(AppRoutes route, BuildContext context) {
+  Navigator.of(context).pushNamed(route.uri);
 }
 
 class _AppBarItem extends StatelessWidget {
