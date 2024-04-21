@@ -14,9 +14,12 @@ class AppScaffold extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Row(
-          children: AppRoutes.values
-              .map((r) => MenuItem(route: r, selected: route))
-              .toList(),
+          children: [
+            const _AppBarItem(text: 'Happy Creek', type: AppBarTypes.title),
+            const SizedBox(width: Sizes.topBarSpace),
+            ...AppRoutes.values
+                .map((r) => _MenuItem(route: r, selected: route)),
+          ],
         ),
         centerTitle: false,
         automaticallyImplyLeading: false, // Remove back button
@@ -30,8 +33,8 @@ class AppScaffold extends StatelessWidget {
   }
 }
 
-class MenuItem extends StatelessWidget {
-  const MenuItem({super.key, required this.route, required this.selected});
+class _MenuItem extends StatelessWidget {
+  const _MenuItem({required this.route, required this.selected});
 
   final AppRoutes route;
   final AppRoutes selected;
@@ -40,11 +43,28 @@ class MenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
+    return _AppBarItem(
       onPressed:
           _isSelected ? null : () => Navigator.of(context).pushNamed(route.uri),
-      style: _isSelected ? Styles.disabledSelected(context) : null,
-      child: Text(route.display),
+      type: _isSelected ? AppBarTypes.menuSelected : AppBarTypes.menuClickable,
+      text: route.display,
+    );
+  }
+}
+
+class _AppBarItem extends StatelessWidget {
+  const _AppBarItem({this.onPressed, required this.text, required this.type});
+
+  final VoidCallback? onPressed;
+  final AppBarTypes type;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: onPressed,
+      style: Styles.appBarItem(context, type),
+      child: Text(text),
     );
   }
 }

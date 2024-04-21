@@ -1,5 +1,5 @@
 enum AppRoutes {
-  home(uri: '/', display: 'Happy Creek'),
+  home(uri: '/', display: 'Home'),
   team(uri: '/team', display: 'Team'),
   ;
 

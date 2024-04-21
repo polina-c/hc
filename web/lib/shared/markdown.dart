@@ -37,41 +37,41 @@ class AppMarkdown extends StatelessWidget {
               color: Colors.white,
             ),
             h1: const TextStyle(
-              fontSize: Sizes.markdownFont + 8,
+              fontSize: FontSizes.markdown + 8,
               fontWeight: FontWeight.bold,
             ),
             h2: const TextStyle(
-              fontSize: Sizes.markdownFont + 6,
+              fontSize: FontSizes.markdown + 6,
               fontWeight: FontWeight.bold,
             ),
             h3: const TextStyle(
-              fontSize: Sizes.markdownFont + 4,
+              fontSize: FontSizes.markdown + 4,
               fontWeight: FontWeight.bold,
             ),
             h4: const TextStyle(
-              fontSize: Sizes.markdownFont + 2,
+              fontSize: FontSizes.markdown + 2,
               fontWeight: FontWeight.bold,
             ),
             h5: const TextStyle(
-              fontSize: Sizes.markdownFont,
+              fontSize: FontSizes.markdown,
               fontWeight: FontWeight.bold,
             ),
             h6: const TextStyle(
-              fontSize: Sizes.markdownFont - 2,
+              fontSize: FontSizes.markdown - 2,
               fontWeight: FontWeight.bold,
             ),
             p: const TextStyle(
-              fontSize: Sizes.markdownFont,
+              fontSize: FontSizes.markdown,
             ),
             tableBody: const TextStyle(
-              fontSize: Sizes.markdownFont,
+              fontSize: FontSizes.markdown,
             ),
             tableHead: const TextStyle(
-              fontSize: Sizes.markdownFont,
+              fontSize: FontSizes.markdown,
               fontWeight: FontWeight.bold,
             ),
             listBullet: const TextStyle(
-              fontSize: Sizes.markdownFont,
+              fontSize: FontSizes.markdown,
             ),
           ),
         ),
