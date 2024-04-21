@@ -20,7 +20,7 @@ class AppScaffold extends StatelessWidget {
               type: AppBarTypes.title,
               onPressed: route == AppRoutes.home
                   ? null
-                  : () => _push(AppRoutes.home, context),
+                  : () => push(AppRoutes.home, context),
             ),
             const SizedBox(width: Sizes.topBarSpace),
             ...AppRoutes.values
@@ -50,15 +50,11 @@ class _MenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _AppBarItem(
-      onPressed: _isSelected ? null : () => _push(route, context),
+      onPressed: _isSelected ? null : () => push(route, context),
       type: _isSelected ? AppBarTypes.menuSelected : AppBarTypes.menuClickable,
       text: route.display,
     );
   }
-}
-
-void _push(AppRoutes route, BuildContext context) {
-  Navigator.of(context).pushNamed(route.uri);
 }
 
 class _AppBarItem extends StatelessWidget {

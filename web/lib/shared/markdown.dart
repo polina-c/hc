@@ -8,9 +8,11 @@ class AppMarkdown extends StatelessWidget {
   const AppMarkdown(
     this.content, {
     super.key,
+    this.onTapLink = const {},
   });
 
   final String content;
+  final Map<String, VoidCallback> onTapLink;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +23,11 @@ class AppMarkdown extends StatelessWidget {
           selectable: true,
           data: content,
           onTapLink: (text, url, title) async {
+            final onTap = onTapLink[url];
+            if (onTap != null) {
+              onTap();
+              return;
+            }
             if (url != null) await launchUrl(Uri.parse(url));
           },
           styleSheet: MarkdownStyleSheet(

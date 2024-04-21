@@ -1,3 +1,5 @@
+import 'package:flutter/widgets.dart';
+
 enum AppRoutes {
   home(uri: '/', display: 'Home'),
   team(uri: '/team', display: 'Team'),
@@ -7,4 +9,8 @@ enum AppRoutes {
   final String display;
 
   const AppRoutes({required this.uri, required this.display});
+}
+
+void push(AppRoutes route, BuildContext context) {
+  Navigator.of(context).pushNamed(route.uri);
 }
