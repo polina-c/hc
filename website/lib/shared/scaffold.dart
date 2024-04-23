@@ -35,9 +35,15 @@ class AppScaffold extends StatelessWidget {
         automaticallyImplyLeading: false, // Remove back button
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(top: Sizes.paddingAfterTopBar),
-        child: body,
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(height: Sizes.paddingAfterTopBar),
+            body,
+            Image.asset('lib/assets/images/ds.png'),
+          ],
+        ),
       ),
     );
   }
