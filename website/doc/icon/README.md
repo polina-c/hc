@@ -2,12 +2,18 @@
 
 ## 1. Generate PNG
 
-Tool to create PNG from text: https://onlinepngtools.com/convert-text-to-png#tool
-Simbol: ツ (used https://coolsymbol.com/ to find)
+You can use the tool to create PNG from text: https://onlinepngtools.com/convert-text-to-png#tool
 See tool parameters on [screenshot](onlinepngtools.png)
 Put result to assets/icon.png
 
 ## 2. Generate icon
 
-Run `flutter pub run flutter_launcher_icons`
+Run:
+
+```
+cd website
+dart run flutter_launcher_icons
+```
+
+
 Read more at: https://pub.dev/packages/flutter_launcher_icons
