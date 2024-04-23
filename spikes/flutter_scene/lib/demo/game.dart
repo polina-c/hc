@@ -29,7 +29,7 @@ class KinematicPlayer {
     return _position;
   }
 
-  Vector3 _direction = Vector3(0, 0, -1);
+  final Vector3 _direction = Vector3(0, 0, -1);
 
   /// Magnitude range: 0 -> 1. Multiplied by kMaxSpeed.
   Vector2 _velocityXZ = Vector2.zero();

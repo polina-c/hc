@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const logo = Colors.deepOrange;
+  static const logo = Colors.blueAccent;
 }
 
 final appTheme = ThemeData(

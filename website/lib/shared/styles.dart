@@ -31,6 +31,7 @@ abstract class Styles {
 abstract class Sizes {
   static const paddingAfterTopBar = 40.0;
   static const markdownWidth = 500.0;
+  static const paddingAfterBody = 70.0;
 }
 
 abstract class FontSizes {

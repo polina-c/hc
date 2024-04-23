@@ -35,14 +35,17 @@ class AppScaffold extends StatelessWidget {
         automaticallyImplyLeading: false, // Remove back button
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(height: Sizes.paddingAfterTopBar),
-            body,
-            Image.asset('lib/assets/images/ds.png'),
-          ],
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: Sizes.paddingAfterTopBar),
+              body,
+              const SizedBox(height: Sizes.paddingAfterBody),
+              Image.asset('lib/assets/images/ds.png'),
+            ],
+          ),
         ),
       ),
     );
