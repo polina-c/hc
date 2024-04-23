@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hc_web/shared/theme.dart';
 
 import 'routes.dart';
 import 'styles.dart';
@@ -15,8 +16,10 @@ class AppScaffold extends StatelessWidget {
       appBar: AppBar(
         title: Row(
           children: [
-            ImageIcon(const AssetImage('lib/assets/logo.png'),
-                color: Theme.of(context).colorScheme.primary),
+            const ImageIcon(
+              AssetImage('lib/assets/logo.png'),
+              color: AppColors.logo,
+            ),
             _AppBarItem(
               text: 'Happy Creek',
               type: AppBarTypes.title,
