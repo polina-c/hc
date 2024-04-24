@@ -19,8 +19,7 @@ participant of many psychological practices, programs and retreats.
 
 **Contributors:**
 - [Maria Nefedeva](https://www.marianefedyeva.com/), UX designer
-- Maria Pozen, Montessori teacher
 - [Mish Cherkasov](https://www.instagram.com/mish.cherkasov), visual content consultant
-    ''');
+''');
   }
 }
