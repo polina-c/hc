@@ -1,11 +1,11 @@
 {
-    "name": "web",
-    "short_name": "web",
+    "name": "Happy Creek",
+    "short_name": "Happy Creek",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#FFFFFF",
     "theme_color": "#009CFF",
-    "description": "A new Flutter project.",
+    "description": "Emotional and social education for elementary and middle scroll children via a role-playing computer game.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
