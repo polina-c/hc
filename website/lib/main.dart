@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../shared/theme.dart';
+import 'shared/design/theme.dart';
 import 'screens/home.dart';
 import 'screens/team.dart';
 import 'shared/routes.dart';
 import 'shared/scaffold.dart';
 
-final routes = {
-  AppRoutes.home: (context) => const HomeScreen(),
-  AppRoutes.team: (context) => const TeamScreen(),
+final routes = <AppRoutes, AppScreen>{
+  AppRoutes.home: homeScreen,
+  AppRoutes.team: teamScreen,
 };
 
 WidgetBuilder routeEntry(String routeName) {
@@ -16,7 +16,11 @@ WidgetBuilder routeEntry(String routeName) {
     (r) => r.uri == routeName,
     orElse: () => AppRoutes.home,
   );
-  return (context) => AppScaffold(routes[route]!(context), route);
+  final screen = routes[route]!;
+  return (context) => AppScaffold(
+        route,
+        screen,
+      );
 }
 
 void main() {

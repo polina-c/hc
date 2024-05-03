@@ -14,7 +14,9 @@ abstract class Styles {
     switch (type) {
       case AppBarTypes.title:
         textStyle = textStyle.copyWith(
-            fontSize: FontSizes.appTitle, fontWeight: FontWeight.w900);
+          fontSize: FontSizes.appTitle,
+          fontWeight: FontWeight.w900,
+        );
       case AppBarTypes.menuSelected:
         textStyle = textStyle.copyWith(fontWeight: FontWeight.w900);
       case AppBarTypes.menuClickable:

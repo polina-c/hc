@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 enum AppRoutes {
   home(uri: '/', display: 'Home'),
@@ -13,4 +13,12 @@ enum AppRoutes {
 
 void push(AppRoutes route, BuildContext context) {
   Navigator.of(context).pushNamed(route.uri);
+}
+
+class AppScreen {
+  final VoidCallback? fabCallback;
+  final String? fabLabel;
+  final WidgetBuilder content;
+
+  const AppScreen(this.content, {this.fabCallback, this.fabLabel});
 }

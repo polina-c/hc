@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../shared/markdown.dart';
+import '../shared/routes.dart';
 
-class TeamScreen extends StatelessWidget {
-  const TeamScreen({super.key});
+final teamScreen = AppScreen((_) => const _Screen());
+
+class _Screen extends StatelessWidget {
+  const _Screen();
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ participant of many psychological practices, programs and retreats.
 \v
 
 **Contributors:**
-- [Maria Nefedeva](https://www.marianefedyeva.com/), UX designer
+- [Maria Nefedeva](https://www.marianefedyeva.com/), UX designer, mom
 - [Mish Cherkasov](https://www.instagram.com/mish.cherkasov), visual content consultant
 ''');
   }

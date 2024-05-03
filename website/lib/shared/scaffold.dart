@@ -1,17 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:hc_web/shared/theme.dart';
+import 'package:hc_web/shared/design/theme.dart';
 
 import 'routes.dart';
-import 'styles.dart';
+import 'design/styles.dart';
 
 class AppScaffold extends StatelessWidget {
-  const AppScaffold(this.body, this.route, {super.key});
+  const AppScaffold(
+    this.route,
+    this.screen, {
+    super.key,
+  });
 
-  final Widget body;
+  final AppScreen screen;
   final AppRoutes route;
 
   @override
   Widget build(BuildContext context) {
+    final Widget? fab = screen.fabCallback == null
+        ? null
+        : FloatingActionButton(
+            onPressed: screen.fabCallback,
+            child: Text(
+              screen.fabLabel!,
+              textAlign: TextAlign.center,
+            ),
+          );
+
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -41,7 +55,8 @@ class AppScaffold extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: Sizes.paddingAfterTopBar),
-              body,
+              screen.content(context),
+              if (fab != null) fab,
               const SizedBox(height: Sizes.paddingAfterBody),
               Image.asset('lib/assets/images/ds.png'),
             ],
