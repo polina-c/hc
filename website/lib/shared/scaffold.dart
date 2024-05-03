@@ -18,12 +18,9 @@ class AppScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     final Widget? fab = screen.fabCallback == null
         ? null
-        : FloatingActionButton(
+        : FloatingActionButton.extended(
             onPressed: screen.fabCallback,
-            child: Text(
-              screen.fabLabel!,
-              textAlign: TextAlign.center,
-            ),
+            label: Text(screen.fabLabel!),
           );
 
     return Scaffold(
