@@ -11,7 +11,7 @@ late final homeScreen = AppScreen(
       'https://docs.google.com/document/d/1ZNrNoxZKZmkcF75ZyGUHrV3UPyJnhEjyVhh3ubYwXFM',
     ),
   ),
-  fabLabel: 'Read more',
+  fabLabel: 'Read More',
 );
 
 class _Screen extends StatelessWidget {

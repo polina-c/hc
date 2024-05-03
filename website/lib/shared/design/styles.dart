@@ -7,21 +7,26 @@ enum AppBarTypes {
 }
 
 abstract class Styles {
-  static ButtonStyle appBarItem(BuildContext context, AppBarTypes type) {
+  static TextStyle normalLabel(BuildContext context) {
     final theme = Theme.of(context);
-    TextStyle textStyle = theme.textTheme.labelLarge!;
+    return theme.textTheme.labelLarge!.copyWith(
+      fontWeight: FontWeight.w100,
+      color: theme.colorScheme.primary,
+    );
+  }
 
-    switch (type) {
-      case AppBarTypes.title:
-        textStyle = textStyle.copyWith(
-          fontSize: FontSizes.appTitle,
-          fontWeight: FontWeight.w900,
-        );
-      case AppBarTypes.menuSelected:
-        textStyle = textStyle.copyWith(fontWeight: FontWeight.w900);
-      case AppBarTypes.menuClickable:
-        textStyle = textStyle.copyWith(fontWeight: FontWeight.w100);
-    }
+  static TextStyle activeLabel(BuildContext context) =>
+      normalLabel(context).copyWith(fontWeight: FontWeight.w900);
+
+  static TextStyle titleLabel(BuildContext context) =>
+      activeLabel(context).copyWith(fontSize: FontSizes.appTitle);
+
+  static ButtonStyle appBarItem(BuildContext context, AppBarTypes type) {
+    final textStyle = switch (type) {
+      AppBarTypes.title => titleLabel(context),
+      AppBarTypes.menuSelected => activeLabel(context),
+      AppBarTypes.menuClickable => normalLabel(context),
+    };
 
     return TextButton.styleFrom(
       disabledForegroundColor: Theme.of(context).colorScheme.primary,
