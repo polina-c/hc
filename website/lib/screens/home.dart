@@ -24,7 +24,7 @@ class _Screen extends StatelessWidget {
       '''
 **Happy Creek** aims to provide **emotional and
 social education** for elementary and middle
-scroll children via a **role-playing computer game**.
+scroll children via **a computer game**.
 
 We are in the phase of prototyping.
 If you are interested in joining us, please reach out to us.
