@@ -20,7 +20,8 @@ class AppScaffold extends StatelessWidget {
         ? null
         : FloatingActionButton.extended(
             onPressed: screen.fabCallback,
-            label: Text(screen.fabLabel!, style: Styles.activeLabel(context)),
+            label:
+                Text(screen.fabLabel!, style: TextStyles.activeLabel(context)),
           );
 
     return Scaffold(
@@ -44,7 +45,7 @@ class AppScaffold extends StatelessWidget {
         ),
         centerTitle: false,
         automaticallyImplyLeading: false, // Remove back button
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: AppColors.background,
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -93,7 +94,7 @@ class _AppBarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
-      style: Styles.appBarItem(context, type),
+      style: ButtonStyles.appBarItem(context, type),
       child: Text(text),
     );
   }
