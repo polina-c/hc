@@ -22,12 +22,19 @@ class _Screen extends StatelessWidget {
     const teamLink = 'team';
     return AppMarkdown(
       '''
-**Happy Creek** aims to provide **emotional and
+# Emotional and Social Education for Children
+
+\v
+
+Welcome to Happy Creek!
+
+We aim to provide **emotional and
 social education** for elementary and middle
-scroll children via **a computer game**.
+scroll children via **computer games**.
 
 We are in the phase of prototyping.
-If you are interested in joining us, please reach out to us.
+
+Your thought and suggestions are welcomed.
 
 \v
 

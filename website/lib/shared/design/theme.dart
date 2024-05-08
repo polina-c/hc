@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppColors {
   static const text = Color.fromARGB(255, 41, 4, 63);
-  static const logo = primary;
+  static const logo = Colors.blueAccent;
   static const link = Colors.blueAccent;
-  static const primary = Colors.amber;
+  static const primary = Colors.yellow; // #FFC107
   static const background = Colors.white;
 }
 
@@ -13,18 +14,20 @@ abstract class FontSizes {
   static const body = 16.0;
 }
 
+/// Choose fonts from https://fonts.google.com/
+abstract class Fonts {
+  static late final body = GoogleFonts.poppins(); // poppins or montserrat
+  static late final headers = GoogleFonts.rowdies(); // paytoneOne or rowdies
+}
+
 final appTheme = ThemeData(
   useMaterial3: true,
-  fontFamily: 'Arial',
-  // GoogleFonts.comfortaa().fontFamily, // Choose from https://fonts.google.com/
-
+  fontFamily: Fonts.body.fontFamily,
   colorScheme: ColorScheme.fromSwatch(
     primarySwatch: AppColors.primary,
     backgroundColor: AppColors.background,
   ),
-
   textTheme: const TextTheme(
-
           //   bodyLarge: test,
           //bodyMedium: test,
           //   bodySmall: test,

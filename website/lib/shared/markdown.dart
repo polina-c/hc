@@ -31,59 +31,7 @@ class AppMarkdown extends StatelessWidget {
           }
           if (url != null) await launchUrl(Uri.parse(url));
         },
-        styleSheet: MarkdownStyleSheet(
-          a: const TextStyle(
-            color: AppColors.link,
-            decoration: TextDecoration.underline,
-            decorationColor: AppColors.link,
-          ),
-          // blockquote: const TextStyle(
-          //   color: Colors.grey,
-          //   fontStyle: FontStyle.italic,
-          // ),
-          // code: const TextStyle(
-          //   backgroundColor: Colors.grey,
-          //   color: Colors.white,
-          // ),
-          // h1: TextStyle(
-          //   fontSize: FontSizes.body + 8,
-          //   fontWeight: FontWeight.bold,
-          // ),
-          // h2: const TextStyle(
-          //   fontSize: FontSizes.body + 6,
-          //   fontWeight: FontWeight.bold,
-          // ),
-          // h3: const TextStyle(
-          //   fontSize: FontSizes.body + 4,
-          //   fontWeight: FontWeight.bold,
-          // ),
-          // h4: const TextStyle(
-          //   fontSize: FontSizes.body + 2,
-          //   fontWeight: FontWeight.bold,
-          // ),
-          // h5: const TextStyle(
-          //   fontSize: FontSizes.body,
-          //   fontWeight: FontWeight.bold,
-          // ),
-          // h6: const TextStyle(
-          //   fontSize: FontSizes.body - 2,
-          //   fontWeight: FontWeight.bold,
-          // ),
-          p: TextStyle(
-            fontSize: FontSizes.body,
-            color: AppColors.text,
-          ),
-          // tableBody: const TextStyle(
-          //   fontSize: FontSizes.body,
-          // ),
-          // tableHead: const TextStyle(
-          //   fontSize: FontSizes.body,
-          //   fontWeight: FontWeight.bold,
-          // ),
-          // listBullet: const TextStyle(
-          //   fontSize: FontSizes.body,
-          // ),
-        ),
+        styleSheet: markdownStyleSheet,
       ),
     );
   }
