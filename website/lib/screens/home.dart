@@ -34,7 +34,7 @@ scroll children via **computer games**.
 
 We are in the phase of prototyping.
 
-Your thought and suggestions are welcomed.
+Your thoughts and suggestions are welcomed.
 
 \v
 
