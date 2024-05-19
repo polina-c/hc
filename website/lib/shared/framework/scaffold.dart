@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hc_web/shared/design/theme.dart';
 
 import 'routes.dart';
-import 'design/styles.dart';
+import '../design/styles.dart';
 
 class AppScaffold extends StatelessWidget {
   const AppScaffold(
@@ -29,10 +29,6 @@ class AppScaffold extends StatelessWidget {
               ),
             ),
           );
-    // FloatingActionButton.extended(
-    //   onPressed: screen.fabCallback,
-    //   label: Text(screen.fabLabel!, style: TextStyles.activeLabel(context)),
-    // );
 
     return Scaffold(
       appBar: AppBar(
@@ -50,6 +46,7 @@ class AppScaffold extends StatelessWidget {
                   : () => push(AppRoutes.home, context),
             ),
             ...AppRoutes.values
+                .where((r) => r.show)
                 .map((r) => _MenuItem(route: r, selected: route)),
           ],
         ),

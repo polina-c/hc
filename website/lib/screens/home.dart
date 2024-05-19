@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../shared/markdown.dart';
-import '../shared/routes.dart';
+import '../shared/bricks/markdown.dart';
+import '../shared/framework/routes.dart';
 
 late final homeScreen = AppScreen(
   (_) => const _Screen(),
@@ -28,7 +28,7 @@ class _Screen extends StatelessWidget {
 
 Welcome to Happy Creek!
 
-We aim to connect modern technologies and human wisdom
+We are connecting modern technologies and human wisdom
 to enable **emotional and
 social education** for more children.
 

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:hc_web/shared/design/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'design/styles.dart';
+import '../design/styles.dart';
 
 class AppMarkdown extends StatelessWidget {
   const AppMarkdown(

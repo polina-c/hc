@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../shared/markdown.dart';
-import '../shared/routes.dart';
+import '../shared/bricks/markdown.dart';
+import '../shared/framework/routes.dart';
 
 final teamScreen = AppScreen((_) => const _Screen());
 

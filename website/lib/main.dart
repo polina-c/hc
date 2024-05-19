@@ -3,11 +3,18 @@ import 'package:flutter/material.dart';
 import 'shared/design/theme.dart';
 import 'screens/home.dart';
 import 'screens/team.dart';
-import 'shared/routes.dart';
-import 'shared/scaffold.dart';
+import 'shared/framework/routes.dart';
+import 'shared/framework/scaffold.dart';
 
 final routes = <AppRoutes, AppScreen>{
   AppRoutes.home: homeScreen,
+  AppRoutes.explore: AppScreen(
+    (_) => const Center(
+      child: Text('Explore'),
+    ),
+    fabCallback: () => print('Explore'),
+    fabLabel: 'Explore',
+  ),
   AppRoutes.team: teamScreen,
 };
 
