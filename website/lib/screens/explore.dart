@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../shared/bricks/markdown.dart';
 import '../shared/framework/screen.dart';
@@ -105,33 +106,36 @@ class _Card extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: const Color.fromARGB(255, 171, 228, 255),
-      child: Container(
-        height: 290,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-        padding: EdgeInsets.all(20),
-        child: Stack(
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Expanded(
-                  child: Image.asset(item.image),
-                ),
-                SizedBox(height: 20),
-                Text(
-                  item.title,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+    return InkWell(
+      onTap: () => launchUrl(Uri.parse(item.link)),
+      child: Card(
+        color: const Color.fromARGB(255, 171, 228, 255),
+        child: Container(
+          height: 290,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+          padding: EdgeInsets.all(20),
+          child: Stack(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(
+                    child: Image.asset(item.image),
                   ),
-                ),
-                SizedBox(height: 10),
-                Text(item.description, softWrap: true),
-              ],
-            ),
-          ],
+                  SizedBox(height: 20),
+                  Text(
+                    item.title,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(item.description, softWrap: true),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
