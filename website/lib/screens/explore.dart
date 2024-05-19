@@ -10,12 +10,130 @@ class _Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // `\v` adds vertical space
-    return const AppMarkdown('''
+    return Column(
+      children: const [
+        _Title(),
+        _Cards(),
+      ],
+    );
+  }
+}
 
+class _Title extends StatelessWidget {
+  const _Title();
+
+  @override
+  Widget build(BuildContext context) {
+    return const AppMarkdown('''
 # Explore
 
 
 ''');
+  }
+}
+
+class _Cards extends StatelessWidget {
+  const _Cards();
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      shrinkWrap: true,
+      padding: const EdgeInsets.all(20),
+      itemCount: _items.length,
+      itemBuilder: (ctx, i) => _Card(_items[i]),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: 1.0,
+        crossAxisSpacing: 20,
+        mainAxisSpacing: 20,
+        mainAxisExtent: 264,
+      ),
+    );
+  }
+}
+
+final _items = [
+  _Item(
+    title: 'About Mira and Gosha',
+    description:
+        'Short animations, created by psychologists. In Russian, with translation.',
+    image: 'images/explore/mira_gosha.png',
+    link: 'https://www.youtube.com/@miragosha',
+  ),
+  _Item(
+    title: 'About Mira and Gosha',
+    description:
+        'Short animations, created by psychologists. In Russian, with translation.',
+    image: 'images/explore/mira_gosha.png',
+    link: 'https://www.youtube.com/@miragosha',
+  ),
+  _Item(
+    title: 'About Mira and Gosha',
+    description:
+        'Short animations, created by psychologists. In Russian, with translation.',
+    image: 'images/explore/mira_gosha.png',
+    link: 'https://www.youtube.com/@miragosha',
+  ),
+  _Item(
+    title: 'About Mira and Gosha',
+    description:
+        'Short animations, created by psychologists. In Russian, with translation.',
+    image: 'images/explore/mira_gosha.png',
+    link: 'https://www.youtube.com/@miragosha',
+  ),
+];
+
+class _Item {
+  const _Item({
+    required this.title,
+    required this.description,
+    required this.image,
+    required this.link,
+  });
+
+  final String title;
+  final String description;
+  final String image;
+  final String link;
+}
+
+class _Card extends StatelessWidget {
+  const _Card(this.item);
+
+  final _Item item;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: const Color.fromARGB(255, 171, 228, 255),
+      child: Container(
+        height: 290,
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+        padding: EdgeInsets.all(20),
+        child: Stack(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  child: Image.asset(item.image),
+                ),
+                SizedBox(height: 20),
+                Text(
+                  item.title,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 10),
+                Text(item.description, softWrap: true),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

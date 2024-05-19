@@ -36,7 +36,7 @@ class AppScaffold extends StatelessWidget {
         title: Row(
           children: [
             const ImageIcon(
-              AssetImage('lib/assets/logo.png'),
+              AssetImage('assets/logo.png'),
               color: AppColors.logo,
             ),
             _AppBarItem(
@@ -68,7 +68,7 @@ class AppScaffold extends StatelessWidget {
               screen.content(context),
               if (fab != null) fab,
               const SizedBox(height: Sizes.paddingAfterBody),
-              Image.asset('lib/assets/images/ds.png'),
+              Image.asset('assets/images/ds.png'),
             ],
           ),
         ),
