@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hc_web/shared/framework/app_structure.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../shared/bricks/markdown.dart';
-import '../shared/framework/routes.dart';
+import '../shared/framework/screen.dart';
 
 late final homeScreen = AppScreen(
   (_) => const _Screen(),

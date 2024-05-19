@@ -1,57 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:hc_web/screens/explore.dart';
 
 import 'shared/design/theme.dart';
 import 'screens/home.dart';
 import 'screens/team.dart';
-import 'shared/framework/routes.dart';
+import 'shared/framework/screen.dart';
 import 'shared/framework/scaffold.dart';
 
-final routes = <AppRoutes, AppScreen>{
-  AppRoutes.home: homeScreen,
-  AppRoutes.explore: AppScreen(
-    (_) => const Center(
-      child: Text('Explore'),
-    ),
-    fabCallback: () => print('Explore'),
-    fabLabel: 'Explore',
-  ),
-  AppRoutes.team: teamScreen,
+const _homeRoute = '/';
+
+final _routes = <String, AppScreen>{
+  _homeRoute: homeScreen,
+  '/explore': exploreScreen,
+  '/team': teamScreen,
 };
 
-WidgetBuilder routeEntry(String routeName) {
-  final route = AppRoutes.values.firstWhere(
-    (r) => r.uri == routeName,
-    orElse: () => AppRoutes.home,
-  );
-  final screen = routes[route]!;
-  return (context) => AppScaffold(
-        route,
-        screen,
-      );
-}
-
 void main() {
-  runApp(const MainApp());
+  runApp(const _MainApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class _MainApp extends StatelessWidget {
+  const _MainApp();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Happy Creek',
       theme: appTheme,
-      initialRoute: AppRoutes.home.uri,
+      initialRoute: _homeRoute,
       // Using this instead of [routes] to turn off animation.
       onGenerateRoute: (settings) {
-        final routeName = settings.name ?? AppRoutes.home.uri;
+        final routeName = settings.name ?? _homeRoute;
         return PageRouteBuilder(
-          pageBuilder: (context, __, ___) => routeEntry(routeName)(context),
+          pageBuilder: (context, __, ___) => _routeEntry(routeName)(context),
           transitionsBuilder: (_, __, ___, child) => child,
           settings: settings,
         );
       },
     );
   }
+}
+
+WidgetBuilder _routeEntry(String route) {
+  final screen = _routes[route] ?? homeScreen;
+
+  return (context) => AppScaffold(
+        route,
+        screen,
+      );
 }

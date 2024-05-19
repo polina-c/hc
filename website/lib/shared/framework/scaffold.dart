@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hc_web/shared/design/theme.dart';
 
-import 'routes.dart';
+import 'app_structure.dart';
+import 'screen.dart';
 import '../design/styles.dart';
 
 class AppScaffold extends StatelessWidget {
@@ -12,7 +13,7 @@ class AppScaffold extends StatelessWidget {
   });
 
   final AppScreen screen;
-  final AppRoutes route;
+  final String route;
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +46,13 @@ class AppScaffold extends StatelessWidget {
                   ? null
                   : () => push(AppRoutes.home, context),
             ),
-            ...AppRoutes.values
-                .where((r) => r.show)
-                .map((r) => _MenuItem(route: r, selected: route)),
+            ...appMenu.entries.map(
+              (e) => _MenuItem(
+                route: e.key,
+                selected: route,
+                displayName: e.value,
+              ),
+            ),
           ],
         ),
         centerTitle: false,
@@ -73,10 +78,15 @@ class AppScaffold extends StatelessWidget {
 }
 
 class _MenuItem extends StatelessWidget {
-  const _MenuItem({required this.route, required this.selected});
+  const _MenuItem({
+    required this.route,
+    required this.selected,
+    required this.displayName,
+  });
 
-  final AppRoutes route;
-  final AppRoutes selected;
+  final String route;
+  final String selected;
+  final String displayName;
 
   bool get _isSelected => route == selected;
 
@@ -85,7 +95,7 @@ class _MenuItem extends StatelessWidget {
     return _AppBarItem(
       onPressed: _isSelected ? null : () => push(route, context),
       type: _isSelected ? AppBarTypes.menuSelected : AppBarTypes.menuClickable,
-      text: route.display,
+      text: displayName,
     );
   }
 }
