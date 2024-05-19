@@ -28,9 +28,9 @@ class _Screen extends StatelessWidget {
 
 Welcome to Happy Creek!
 
-We aim to provide **emotional and
-social education** for children by
-connecting modern technologies and human wisdom.
+We aim to connect modern technologies and human wisdom
+to enable **emotional and
+social education** for more children.
 
 We are in the phase of prototyping.
 

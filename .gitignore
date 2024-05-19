@@ -1,3 +1,4 @@
 
 spikes/flutter_scene/pubspec.lock
 /logs
+**/pubspec.lock
