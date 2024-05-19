@@ -56,9 +56,9 @@ class _Cards extends StatelessWidget {
 
 final _items = [
   _Item(
-    title: 'About Mira and Gosha',
+    title: 'Mira and Gosha',
     description:
-        'Short animations, created by psychologists. In Russian, with translation.',
+        'Short animations, created by psychologists.\nIn Russian, with translation.',
     image: 'images/explore/mira_gosha.png',
     link: 'https://www.youtube.com/@miragosha',
   ),
