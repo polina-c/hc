@@ -28,9 +28,9 @@ class _Title extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const AppMarkdown('''
-# Explore
+# Resources
 
-Here is resources for emotional and social education.
+We listed resources for emotional and social education.
 Did we miss something?
 ''');
   }

@@ -19,6 +19,45 @@ final items = [
     link:
         'https://play.google.com/store/apps/details?id=org.howwefeel.moodmeter',
   ),
+  ExploreItem(
+    title: 'Pluck It',
+    description: 'A weird game about emotions',
+    image: 'images/explore/how_we_feel.webp',
+    iosLink:
+        'https://apps.apple.com/us/app/pluck-it-hairs-and-emotions/id1377729521',
+    link:
+        'https://play.google.com/store/apps/details?id=com.feelinggame.pluckit',
+  ),
+  ExploreItem(
+    title: 'Messenger Kids',
+    description: 'Messaging controlled by parents',
+    image: 'images/explore/how_we_feel.webp',
+    iosLink: 'https://apps.apple.com/us/app/messenger-kids/id1285713171',
+    link: 'https://play.google.com/store/apps/details?id=com.facebook.talk',
+  ),
+  ExploreItem(
+    title: 'IntroDUCKtion',
+    description: 'IntroDUCKtion to Big Feelings',
+    image: 'images/explore/how_we_feel.webp',
+    iosLink:
+        'https://apps.apple.com/us/app/introducktion-to-big-feelings/id553721733',
+    link: 'https://play.google.com/store/apps/details?id=com.introDucktion',
+  ),
+  ExploreItem(
+    title: 'Feeling Arrow',
+    description: 'Control people with arrows of feelings',
+    image: 'images/explore/how_we_feel.webp',
+    iosLink: 'https://apps.apple.com/us/app/feeling-arrow/id1628597068',
+    link: 'https://play.google.com/store/search?q=feeling+arrow&c=apps',
+  ),
+  ExploreItem(
+    title: 'Peppy Pals',
+    description: 'Game to explore emotions',
+    image: 'images/explore/how_we_feel.webp',
+    iosLink: 'https://apps.apple.com/us/app/peppy-pals/id1457065641',
+    link:
+        'https://play.google.com/store/apps/details?id=com.peppypals.socialskills',
+  ),
 ];
 
 class ExploreItem {
