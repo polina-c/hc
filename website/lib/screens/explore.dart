@@ -28,6 +28,7 @@ class _Title extends StatelessWidget {
     return const AppMarkdown('''
 # Explore
 
+We listed educational resources for emotional and social skills.
 
 ''');
   }
@@ -58,7 +59,8 @@ final _items = [
   _Item(
     title: 'Mira and Gosha',
     description:
-        'Short animations, created by psychologists.\nIn Russian, with translation.',
+        'Short animations, created by psychologists, where characters face challenges and overcome them.'
+        '\nIn Russian, with translation.',
     image: 'images/explore/mira_gosha.png',
     link: 'https://www.youtube.com/@miragosha',
   ),
