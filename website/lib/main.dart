@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hc_web/screens/explore.dart';
+import 'package:hc_web/screens/explore/explore.dart';
 
 import 'shared/design/theme.dart';
 import 'screens/home.dart';

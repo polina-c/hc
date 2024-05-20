@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hc_web/shared/bricks/utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../shared/bricks/markdown.dart';
-import '../shared/framework/screen.dart';
+import '../../shared/bricks/markdown.dart';
+import '../../shared/framework/screen.dart';
+import '_items.dart';
 
 final exploreScreen = AppScreen((_) => const _Screen());
 
@@ -28,8 +30,8 @@ class _Title extends StatelessWidget {
     return const AppMarkdown('''
 # Explore
 
-We listed educational resources for emotional and social skills.
-
+Here is resources for emotional and social education.
+Did we miss something?
 ''');
   }
 }
@@ -42,8 +44,8 @@ class _Cards extends StatelessWidget {
     return GridView.builder(
       shrinkWrap: true,
       padding: const EdgeInsets.all(20),
-      itemCount: _items.length,
-      itemBuilder: (ctx, i) => _Card(_items[i]),
+      itemCount: items.length,
+      itemBuilder: (ctx, i) => _Card(items[i]),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 1.0,
@@ -55,61 +57,15 @@ class _Cards extends StatelessWidget {
   }
 }
 
-final _items = [
-  _Item(
-    title: 'Mira and Gosha',
-    description:
-        'Short animations, created by psychologists, where characters face challenges and overcome them.'
-        '\nIn Russian, with translation.',
-    image: 'images/explore/mira_gosha.png',
-    link: 'https://www.youtube.com/@miragosha',
-  ),
-  _Item(
-    title: 'About Mira and Gosha',
-    description:
-        'Short animations, created by psychologists. In Russian, with translation.',
-    image: 'images/explore/mira_gosha.png',
-    link: 'https://www.youtube.com/@miragosha',
-  ),
-  _Item(
-    title: 'About Mira and Gosha',
-    description:
-        'Short animations, created by psychologists. In Russian, with translation.',
-    image: 'images/explore/mira_gosha.png',
-    link: 'https://www.youtube.com/@miragosha',
-  ),
-  _Item(
-    title: 'About Mira and Gosha',
-    description:
-        'Short animations, created by psychologists. In Russian, with translation.',
-    image: 'images/explore/mira_gosha.png',
-    link: 'https://www.youtube.com/@miragosha',
-  ),
-];
-
-class _Item {
-  const _Item({
-    required this.title,
-    required this.description,
-    required this.image,
-    required this.link,
-  });
-
-  final String title;
-  final String description;
-  final String image;
-  final String link;
-}
-
 class _Card extends StatelessWidget {
   const _Card(this.item);
 
-  final _Item item;
+  final ExploreItem item;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => launchUrl(Uri.parse(item.link)),
+      onTap: () => launchUrl(Uri.parse(isWebOnIos ? item.iosLink : item.link)),
       child: Card(
         color: const Color.fromARGB(255, 171, 228, 255),
         child: Container(

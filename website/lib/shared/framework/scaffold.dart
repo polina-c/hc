@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hc_web/shared/design/theme.dart';
 
@@ -69,6 +70,7 @@ class AppScaffold extends StatelessWidget {
               if (fab != null) fab,
               const SizedBox(height: Sizes.paddingAfterBody),
               Image.asset('assets/images/ds.png'),
+              Text(defaultTargetPlatform.name),
             ],
           ),
         ),
