@@ -37,7 +37,7 @@ final items = [
   ),
   ExploreItem(
     title: 'IntroDUCKtion',
-    description: 'IntroDUCKtion to Big Feelings',
+    description: 'IntroDUCKtion to big feelings',
     image: 'images/explore/how_we_feel.webp',
     iosLink:
         'https://apps.apple.com/us/app/introducktion-to-big-feelings/id553721733',

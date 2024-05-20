@@ -43,7 +43,7 @@ class _Cards extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       shrinkWrap: true,
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(50),
       itemCount: items.length,
       itemBuilder: (ctx, i) => _Card(items[i]),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
