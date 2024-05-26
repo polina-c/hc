@@ -6,3 +6,6 @@ late final bool isWebOnIos = () {
   return {TargetPlatform.iOS, TargetPlatform.macOS}
       .contains(defaultTargetPlatform);
 }();
+
+/// See https://stackoverflow.com/questions/62292512/firebase-flutter-web-app-works-locally-but-when-deployed-images-are-not-shown
+String imagePath = kDebugMode ? '' : 'assets/';

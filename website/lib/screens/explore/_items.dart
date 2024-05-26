@@ -12,6 +12,13 @@ final items = [
     iosLink: _SharedLinks.miraAndGosha,
   ),
   ExploreItem(
+    title: 'Feeling Arrow',
+    description: 'Control people with arrows of feelings',
+    image: 'images/explore/feeling_arrow.webp',
+    iosLink: 'https://apps.apple.com/us/app/feeling-arrow/id1628597068',
+    link: 'https://play.google.com/store/search?q=feeling+arrow&c=apps',
+  ),
+  ExploreItem(
     title: 'How We Feel',
     description: 'An emotional wellbeing journal.',
     image: 'images/explore/how_we_feel.webp',
@@ -42,13 +49,6 @@ final items = [
     iosLink:
         'https://apps.apple.com/us/app/introducktion-to-big-feelings/id553721733',
     link: 'https://play.google.com/store/apps/details?id=com.introDucktion',
-  ),
-  ExploreItem(
-    title: 'Feeling Arrow',
-    description: 'Control people with arrows of feelings',
-    image: 'images/explore/feeling_arrow.webp',
-    iosLink: 'https://apps.apple.com/us/app/feeling-arrow/id1628597068',
-    link: 'https://play.google.com/store/search?q=feeling+arrow&c=apps',
   ),
   ExploreItem(
     title: 'Peppy Pals',

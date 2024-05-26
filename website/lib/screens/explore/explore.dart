@@ -82,7 +82,7 @@ class _Card extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Image.asset(
-                      item.image,
+                      '$imagePath${item.image}',
                       fit: BoxFit.fill,
                     ),
                   ),

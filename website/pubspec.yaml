@@ -3,7 +3,7 @@ publish_to: 'none'
 version: 0.1.0
 
 environment:
-  sdk: '>=3.5.0-82.0.dev <4.0.0'
+  sdk: '>=3.4.0-82.0.dev <4.0.0'
 
 dependencies:
   flutter:
@@ -22,7 +22,13 @@ flutter:
   uses-material-design: true
   assets:
     - assets/logo.png
-    - assets/images/ds.png
+    - assets/images/explore/feeling_arrow.webp
+    - assets/images/explore/how_we_feel.webp
+    - assets/images/explore/introducktion.webp
+    - assets/images/explore/peppy_pals.webp
+    - assets/images/explore/messenger.webp
+    - assets/images/explore/mira_gosha.png
+    - assets/images/explore/pluck_it.webp
 
 flutter_launcher_icons:
   web:

@@ -6,6 +6,8 @@ import 'app_structure.dart';
 import 'screen.dart';
 import '../design/styles.dart';
 
+const _version = 7;
+
 class AppScaffold extends StatelessWidget {
   const AppScaffold(
     this.route,
@@ -70,7 +72,7 @@ class AppScaffold extends StatelessWidget {
               if (fab != null) fab,
               const SizedBox(height: Sizes.paddingAfterBody),
               Image.asset('assets/images/ds.png'),
-              Text(defaultTargetPlatform.name),
+              Text('${defaultTargetPlatform.name}, $_version'),
             ],
           ),
         ),
