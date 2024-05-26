@@ -30,8 +30,9 @@ class _Title extends StatelessWidget {
     return const AppMarkdown('''
 # Explore
 
-We listed some resources. Did we miss something important?
-''');
+We listed educational resources and tools here. Choose what you like and what works for you.
+Did we miss something important?
+'''); // Button 'let us know'
   }
 }
 

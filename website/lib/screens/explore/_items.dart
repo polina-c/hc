@@ -5,8 +5,7 @@ abstract class _SharedLinks {
 final items = [
   ExploreItem(
     title: 'Mira and Gosha',
-    description: 'Short animations, created by psychologists.'
-        '\nIn Russian, with translation.',
+    description: 'Animations by psychologists',
     image: 'images/explore/mira_gosha.png',
     link: _SharedLinks.miraAndGosha,
     iosLink: _SharedLinks.miraAndGosha,
