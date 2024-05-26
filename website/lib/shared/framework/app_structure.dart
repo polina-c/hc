@@ -10,12 +10,12 @@ class AppRoutes {
 const kExperiments = bool.fromEnvironment('experiments', defaultValue: false);
 
 class FeatureFlags {
-  static const bool exploreScreen = kExperiments;
+  // static const bool exploreScreen = kExperiments;
 }
 
 const appMenu = {
   AppRoutes.home: 'Home',
-  if (FeatureFlags.exploreScreen) AppRoutes.explore: 'Explore',
+  AppRoutes.explore: 'Explore',
   AppRoutes.team: 'Team',
 };
 
