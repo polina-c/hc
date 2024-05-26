@@ -72,26 +72,22 @@ class _Card extends StatelessWidget {
           height: 290,
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
           padding: EdgeInsets.all(20),
-          child: Stack(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Expanded(
-                    child: Image.asset(item.image),
-                  ),
-                  SizedBox(height: 20),
-                  Text(
-                    item.title,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                  Text(item.description, softWrap: true),
-                ],
+              Expanded(
+                child: Image.asset(item.image),
               ),
+              SizedBox(height: 20),
+              Text(
+                item.title,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 10),
+              Text(item.description, softWrap: true),
             ],
           ),
         ),
