@@ -17,7 +17,7 @@ abstract class FontSizes {
 /// Choose fonts from https://fonts.google.com/
 abstract class Fonts {
   static late final body = GoogleFonts.poppins(); // poppins or montserrat
-  static late final headers = GoogleFonts.rowdies(); // paytoneOne or rowdies
+  static late final headers = GoogleFonts.outfit(); // paytoneOne or rowdies
 }
 
 final appTheme = ThemeData(

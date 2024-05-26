@@ -22,7 +22,7 @@ final items = [
   ExploreItem(
     title: 'Pluck It',
     description: 'A weird game about emotions',
-    image: 'images/explore/how_we_feel.webp',
+    image: 'images/explore/pluck_it.webp',
     iosLink:
         'https://apps.apple.com/us/app/pluck-it-hairs-and-emotions/id1377729521',
     link:

@@ -29,6 +29,8 @@ participant of many psychological practices, programs and retreats.
 - Jessi Back, mom, student of NWIC
 - [Maria Nefedeva](https://www.marianefedyeva.com/), UX designer, mom
 - [Mish Cherkasov](https://www.instagram.com/mish.cherkasov), visual content consultant
+
+and others who prefer to stay anonymous
 ''');
   }
 }
