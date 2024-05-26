@@ -76,7 +76,18 @@ class _Card extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Expanded(
-                child: Image.asset(item.image),
+                child: FittedBox(
+                  child: Container(
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Image.asset(
+                      item.image,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
               ),
               SizedBox(height: 20),
               Text(
