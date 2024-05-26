@@ -2,11 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hc_web/shared/design/theme.dart';
 
+import '../bricks/utils.dart';
 import 'app_structure.dart';
 import 'screen.dart';
 import '../design/styles.dart';
 
-const _version = 7;
+const _version = 3;
 
 class AppScaffold extends StatelessWidget {
   const AppScaffold(
@@ -71,7 +72,7 @@ class AppScaffold extends StatelessWidget {
               screen.content(context),
               if (fab != null) fab,
               const SizedBox(height: Sizes.paddingAfterBody),
-              Image.asset('assets/images/ds.png'),
+              Image.asset('${imagePath}images/ds.png'),
               Text('${defaultTargetPlatform.name}, $_version'),
             ],
           ),
