@@ -30,7 +30,7 @@ class _Title extends StatelessWidget {
     return const AppMarkdown('''
 # Explore
 
-We listed some resources. Did we miss something?
+We listed some resources. Did we miss something important?
 ''');
   }
 }
