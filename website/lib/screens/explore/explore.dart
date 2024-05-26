@@ -30,8 +30,7 @@ class _Title extends StatelessWidget {
     return const AppMarkdown('''
 # Explore
 
-We listed resources for emotional and social education.
-Did we miss something?
+We listed some resources. Did we miss something?
 ''');
   }
 }
