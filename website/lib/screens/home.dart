@@ -3,10 +3,8 @@ import 'package:hc_web/shared/bricks/fab.dart';
 import 'package:hc_web/shared/bricks/layout.dart';
 import 'package:hc_web/shared/framework/app_structure.dart';
 
-import '../shared/bricks/border.dart';
 import '../shared/bricks/image.dart';
 import '../shared/bricks/text.dart';
-import '../shared/design/styles.dart';
 import '../shared/framework/screen.dart';
 
 late final homeScreen = AppScreen((_) => const _Screen());
@@ -52,7 +50,7 @@ class _Screen extends StatelessWidget {
 }
 
 class _Text1 extends StatelessWidget {
-  const _Text1({super.key});
+  const _Text1();
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +75,7 @@ designers, software engineers and parents.''',
 }
 
 class _Text2 extends StatelessWidget {
-  const _Text2({super.key});
+  const _Text2();
 
   @override
   Widget build(BuildContext context) {

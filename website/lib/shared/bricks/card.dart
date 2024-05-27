@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hc_web/shared/bricks/border.dart';
-import 'package:hc_web/shared/design/styles.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../design/theme.dart';
