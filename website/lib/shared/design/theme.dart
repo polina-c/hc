@@ -3,11 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppColors {
   static const text = Color.fromARGB(255, 41, 4, 63);
-  static const logo = Colors.blueAccent;
+  static const logo = Colors.amber;
   static const link = Colors.blueAccent;
   static const primary = Colors.yellow; // #FFC107
   static const background = Colors.white;
-  static const subLine = Colors.orange;
+  static const subLine = Colors.blue;
 }
 
 abstract class FontSizes {
