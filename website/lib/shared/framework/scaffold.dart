@@ -34,9 +34,7 @@ class AppScaffold extends StatelessWidget {
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Wrap(
-                direction: Axis.horizontal,
-                crossAxisAlignment: WrapCrossAlignment.center,
+              Row(
                 children: [
                   const ImageIcon(
                     AssetImage('assets/logo.png'),
@@ -49,6 +47,7 @@ class AppScaffold extends StatelessWidget {
                         ? null
                         : () => push(AppRoutes.home, context),
                   ),
+                  Expanded(child: SizedBox()),
                   ...appMenu.entries.map(
                     (e) => _MenuItem(
                       route: e.key,
@@ -58,11 +57,12 @@ class AppScaffold extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 12),
-              AppText(
-                'Emotional and social education for children',
-                style: TextStyles.subLine(context),
-                textAlign: TextAlign.left,
+              Divider(color: AppColors.divider, thickness: 1),
+              Center(
+                child: AppText(
+                  'Emotional and social education for children',
+                  style: TextStyles.subLine(context),
+                ),
               ),
             ],
           ),
