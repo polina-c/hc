@@ -16,21 +16,23 @@ class AppMarkdown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: Sizes.markdownWidth,
-      child: Markdown(
-        selectable: true,
-        data: content,
-        shrinkWrap: true,
-        onTapLink: (text, url, title) async {
-          final onTap = onTapLink[url];
-          if (onTap != null) {
-            onTap();
-            return;
-          }
-          if (url != null) await launchUrl(Uri.parse(url));
-        },
-        styleSheet: markdownStyleSheet,
+    return FittedBox(
+      child: SizedBox(
+        width: Sizes.markdownWidth,
+        child: Markdown(
+          selectable: true,
+          data: content,
+          shrinkWrap: true,
+          onTapLink: (text, url, title) async {
+            final onTap = onTapLink[url];
+            if (onTap != null) {
+              onTap();
+              return;
+            }
+            if (url != null) await launchUrl(Uri.parse(url));
+          },
+          styleSheet: markdownStyleSheet,
+        ),
       ),
     );
   }

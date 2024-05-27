@@ -21,13 +21,8 @@ class _Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const teamLink = 'team';
-    return Column(
-      children: [
-        SizedBox(
-          height: 800,
-        ),
-        AppMarkdown(
-          '''
+    return AppMarkdown(
+      '''
 # Emotional and Social Education for Children
 
 \v
@@ -46,11 +41,9 @@ Your thoughts and suggestions are welcomed.
 
 [Our Team]($teamLink)
         ''',
-          onTapLink: {
-            teamLink: () => push(AppRoutes.team, context),
-          },
-        ),
-      ],
+      onTapLink: {
+        teamLink: () => push(AppRoutes.team, context),
+      },
     );
   }
 }

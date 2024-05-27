@@ -30,7 +30,8 @@ class _Title extends StatelessWidget {
     return const AppMarkdown('''
 # Explore
 
-We listed educational resources and tools here. Choose what you like and what works for you.
+We listed some educational resources. Choose what you like and what works for you.
+
 Did we miss something important?
 '''); // Button 'let us know'
   }
@@ -42,6 +43,8 @@ class _Cards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
+      // Is needed for mobile browsers, to scroll with tap and drag.
+      physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       padding: const EdgeInsets.all(50),
       itemCount: items.length,

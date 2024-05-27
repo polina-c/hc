@@ -10,8 +10,8 @@ class AppColors {
 }
 
 abstract class FontSizes {
-  static const appTitle = 24.0;
-  static const body = 16.0;
+  static const appTitle = 26.0;
+  static const body = 20.0;
 }
 
 /// Choose fonts from https://fonts.google.com/
