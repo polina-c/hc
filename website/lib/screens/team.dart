@@ -19,6 +19,7 @@ class _Screen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AppColumn(
+              width: 400,
               child: AppMarkdown('''
 # Our Team
 
@@ -30,7 +31,7 @@ participant of many psychological practices, programs and retreats.
                       '''),
             ),
             SizedBox(
-              width: 300,
+              width: 280,
               child: Image.asset('images/team/team.jpg'),
             ),
           ],
