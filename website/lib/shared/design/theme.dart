@@ -7,6 +7,8 @@ class AppColors {
   static const link = Colors.blueAccent;
   static const primary = Colors.yellow; // #FFC107
   static const background = Colors.white;
+
+  static const subLine = text;
 }
 
 abstract class FontSizes {

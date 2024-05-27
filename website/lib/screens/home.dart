@@ -1,45 +1,57 @@
 import 'package:flutter/material.dart';
+import 'package:hc_web/shared/bricks/fab.dart';
+import 'package:hc_web/shared/bricks/layout.dart';
 import 'package:hc_web/shared/framework/app_structure.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../shared/bricks/markdown.dart';
 import '../shared/framework/screen.dart';
 
-late final homeScreen = AppScreen(
-  (_) => const _Screen(),
-  fabCallback: () => launchUrl(
-    Uri.parse(
-      'https://docs.google.com/document/d/1ZNrNoxZKZmkcF75ZyGUHrV3UPyJnhEjyVhh3ubYwXFM',
-    ),
-  ),
-  fabLabel: 'Read More',
-);
+late final homeScreen = AppScreen((_) => const _Screen());
 
 class _Screen extends StatelessWidget {
   const _Screen();
 
   @override
   Widget build(BuildContext context) {
+    return AppColumn(
+      child: Column(
+        children: [
+          _Text(),
+          Fab(
+            callback: () => push(AppRoutes.explore, context),
+            label: 'Explore',
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _Text extends StatelessWidget {
+  const _Text({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     const teamLink = 'team';
     return AppMarkdown(
       '''
-# Emotional and Social Education for Children
+# Welcome to Happy Creek!
 
 \v
-
-Welcome to Happy Creek!
 
 We are connecting modern technologies and human wisdom
 to enable **emotional and
 social education** for more children.
 
-We are in the phase of prototyping.
+We want more children to grow up with rich skills to
+communicate powerfully, to deal with emotions,
+to navigate social situations and to feel safe to
+ask for help when they need it.
 
-Your thoughts and suggestions are welcomed.
+[Our Team]($teamLink) includes educators, psychologists,
+designers, software engineers and parents.
 
 \v
-
-[Our Team]($teamLink)
         ''',
       onTapLink: {
         teamLink: () => push(AppRoutes.team, context),

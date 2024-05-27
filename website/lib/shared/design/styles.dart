@@ -4,12 +4,13 @@ import 'package:hc_web/shared/design/theme.dart';
 
 enum AppBarTypes {
   title,
+  subLine,
   menuSelected,
   menuClickable,
 }
 
 abstract class TextStyles {
-  static TextStyle normalLabel(BuildContext context) {
+  static TextStyle normal(BuildContext context) {
     final theme = Theme.of(context);
     return theme.textTheme.labelLarge!.copyWith(
       fontWeight: FontWeight.w100,
@@ -17,22 +18,25 @@ abstract class TextStyles {
     );
   }
 
-  static TextStyle activeLabel(BuildContext context) =>
-      normalLabel(context).copyWith(fontWeight: FontWeight.w900);
+  static TextStyle activeMenu(BuildContext context) =>
+      normal(context).copyWith(fontWeight: FontWeight.w900);
 
-  static TextStyle titleLabel(BuildContext context) =>
-      activeLabel(context).copyWith(
+  static TextStyle title(BuildContext context) => activeMenu(context).copyWith(
         fontSize: FontSizes.appTitle,
         fontFamily: Fonts.headers.fontFamily,
       );
+
+  static TextStyle subLine(BuildContext context) => normal(context)
+      .copyWith(fontWeight: FontWeight.w600, color: AppColors.subLine);
 }
 
 abstract class ButtonStyles {
   static ButtonStyle appBarItem(BuildContext context, AppBarTypes type) {
     final textStyle = switch (type) {
-      AppBarTypes.title => TextStyles.titleLabel(context),
-      AppBarTypes.menuSelected => TextStyles.activeLabel(context),
-      AppBarTypes.menuClickable => TextStyles.normalLabel(context),
+      AppBarTypes.title => TextStyles.title(context),
+      AppBarTypes.menuSelected => TextStyles.activeMenu(context),
+      AppBarTypes.menuClickable => TextStyles.normal(context),
+      AppBarTypes.subLine => throw StateError('subline is not a button'),
     };
 
     return TextButton.styleFrom(
@@ -56,9 +60,12 @@ abstract class ButtonStyles {
 }
 
 abstract class Sizes {
-  static const paddingAfterTopBar = 40.0;
-  static const markdownWidth = 500.0;
+  static const columnWidth = 500.0;
   static const paddingAfterBody = 70.0;
+
+  static const sublineSpace = 12.0;
+  static const toolbarHeight = 65.0;
+  static const paddingAfterTopBar = 40.0;
 }
 
 final markdownStyleSheet = MarkdownStyleSheet(

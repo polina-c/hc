@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hc_web/shared/bricks/fab.dart';
 import 'package:hc_web/shared/bricks/utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../shared/bricks/layout.dart';
 import '../../shared/bricks/markdown.dart';
 import '../../shared/framework/screen.dart';
 import '_items.dart';
@@ -14,16 +16,23 @@ class _Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
-        _Title(),
+      children: [
+        AppColumn(
+          child: Column(
+            children: const [
+              _Text(),
+              ShareFab(),
+            ],
+          ),
+        ),
         _Cards(),
       ],
     );
   }
 }
 
-class _Title extends StatelessWidget {
-  const _Title();
+class _Text extends StatelessWidget {
+  const _Text();
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +41,7 @@ class _Title extends StatelessWidget {
 
 We listed some educational resources. Choose what you like and what works for you.
 
-Did we miss something important?
+
 '''); // Button 'let us know'
   }
 }

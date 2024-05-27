@@ -7,7 +7,7 @@ import 'app_structure.dart';
 import 'screen.dart';
 import '../design/styles.dart';
 
-const _version = 1;
+const _version = 2;
 
 class AppScaffold extends StatelessWidget {
   const AppScaffold(
@@ -21,41 +21,39 @@ class AppScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Widget? fab = screen.fabCallback == null
-        ? null
-        : FilledButton(
-            style: ButtonStyles.fab(context),
-            onPressed: screen.fabCallback,
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(
-                screen.fabLabel!,
-                style: TextStyles.activeLabel(context),
-              ),
-            ),
-          );
-
     return Scaffold(
       appBar: AppBar(
-        title: Row(
+        toolbarHeight: Sizes.toolbarHeight,
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const ImageIcon(
-              AssetImage('assets/logo.png'),
-              color: AppColors.logo,
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                const ImageIcon(
+                  AssetImage('assets/logo.png'),
+                  color: AppColors.logo,
+                ),
+                _AppBarItem(
+                  text: 'Happy Creek',
+                  type: AppBarTypes.title,
+                  onPressed: route == AppRoutes.home
+                      ? null
+                      : () => push(AppRoutes.home, context),
+                ),
+                ...appMenu.entries.map(
+                  (e) => _MenuItem(
+                    route: e.key,
+                    selected: route,
+                    displayName: e.value,
+                  ),
+                ),
+              ],
             ),
+            SizedBox(height: Sizes.sublineSpace),
             _AppBarItem(
-              text: 'Happy Creek',
-              type: AppBarTypes.title,
-              onPressed: route == AppRoutes.home
-                  ? null
-                  : () => push(AppRoutes.home, context),
-            ),
-            ...appMenu.entries.map(
-              (e) => _MenuItem(
-                route: e.key,
-                selected: route,
-                displayName: e.value,
-              ),
+              text: 'Emotional and social education for children',
+              type: AppBarTypes.subLine,
             ),
           ],
         ),
@@ -70,7 +68,6 @@ class AppScaffold extends StatelessWidget {
             children: [
               const SizedBox(height: Sizes.paddingAfterTopBar),
               screen.content(context),
-              if (fab != null) fab,
               const SizedBox(height: Sizes.paddingAfterBody),
               Image.asset('${imagePath}images/ds.png'),
               Text('${defaultTargetPlatform.name}, $_version'),
@@ -114,6 +111,13 @@ class _AppBarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (type == AppBarTypes.subLine) {
+      return Text(
+        text,
+        style: TextStyles.subLine(context),
+        textAlign: TextAlign.left,
+      );
+    }
     return TextButton(
       onPressed: onPressed,
       style: ButtonStyles.appBarItem(context, type),
