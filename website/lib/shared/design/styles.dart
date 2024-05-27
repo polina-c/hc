@@ -48,17 +48,17 @@ abstract class ButtonStyles {
   }
 
   static ButtonStyle fab(BuildContext context) {
-    return FilledButton.styleFrom(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.0),
-        side: BorderSide(
-          color: AppColors.text,
-          width: 2.0,
-        ),
-      ),
-    );
+    return FilledButton.styleFrom(shape: borderedShape);
   }
 }
+
+final borderedShape = RoundedRectangleBorder(
+  borderRadius: BorderRadius.circular(18.0),
+  side: BorderSide(
+    color: AppColors.text,
+    width: 2.0,
+  ),
+);
 
 abstract class Sizes {
   static const columnWidth = 500.0;
