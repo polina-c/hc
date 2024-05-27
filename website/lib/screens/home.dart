@@ -3,7 +3,7 @@ import 'package:hc_web/shared/bricks/fab.dart';
 import 'package:hc_web/shared/bricks/layout.dart';
 import 'package:hc_web/shared/framework/app_structure.dart';
 
-import '../shared/bricks/markdown.dart';
+import '../shared/bricks/text.dart';
 import '../shared/framework/screen.dart';
 
 late final homeScreen = AppScreen((_) => const _Screen());
@@ -43,7 +43,7 @@ We are connecting modern technologies and human wisdom
 to enable **emotional and
 social education** for more children.
 
-We want more children to grow up with rich skills to
+We want more children to grow up with skills to
 communicate powerfully, to deal with emotions,
 to navigate social situations and to feel safe to
 ask for help when they need it.

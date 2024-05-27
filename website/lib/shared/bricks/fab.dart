@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hc_web/shared/bricks/text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../design/styles.dart';
@@ -40,7 +41,7 @@ class Fab extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           if (question != null) ...[
-            Text(question!),
+            AppText(question!),
             SizedBox(
               width: 10,
             ),

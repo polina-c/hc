@@ -4,6 +4,17 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../design/styles.dart';
 
+class AppText extends StatelessWidget {
+  const AppText(this.text, {super.key});
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text, style: TextStyles.normal(context));
+  }
+}
+
 class AppMarkdown extends StatelessWidget {
   const AppMarkdown(
     this.content, {

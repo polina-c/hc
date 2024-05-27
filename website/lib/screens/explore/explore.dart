@@ -4,7 +4,7 @@ import 'package:hc_web/shared/bricks/utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../shared/bricks/layout.dart';
-import '../../shared/bricks/markdown.dart';
+import '../../shared/bricks/text.dart';
 import '../../shared/framework/screen.dart';
 import '_items.dart';
 

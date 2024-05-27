@@ -7,13 +7,12 @@ class AppColors {
   static const link = Colors.blueAccent;
   static const primary = Colors.yellow; // #FFC107
   static const background = Colors.white;
-
   static const subLine = text;
 }
 
 abstract class FontSizes {
   static const appTitle = 26.0;
-  static const body = 20.0;
+  static const body = 18.0;
 }
 
 /// Choose fonts from https://fonts.google.com/
@@ -29,31 +28,31 @@ final appTheme = ThemeData(
     primarySwatch: AppColors.primary,
     backgroundColor: AppColors.background,
   ),
-  textTheme: const TextTheme(
-          //   bodyLarge: test,
-          //bodyMedium: test,
-          //   bodySmall: test,
-          //   displayLarge: test,
-          //   displayMedium: test,
-          //   displaySmall: test,
-          //   headlineLarge: test,
-          //   headlineMedium: test,
-          //   headlineSmall: test,
-          //labelLarge: test,
-          // labelMedium: test,
-          // labelSmall: test,
-          //   titleLarge: test,
-          //   titleMedium: test,
-          //   titleSmall: test,
-          // ),
-          // appBarTheme: const AppBarTheme(
-          //   // backgroundColor: Colors.white,
-          //   // foregroundColor: Colors.black,
-          //   titleTextStyle: test,
-          //   toolbarTextStyle: test,
-          )
-      .apply(
-    bodyColor: AppColors.text,
-    // displayColor: Colors.blue,
-  ),
+  // textTheme: const TextTheme(
+  //         //   bodyLarge: test,
+  //         //bodyMedium: test,
+  //         //   bodySmall: test,
+  //         //   displayLarge: test,
+  //         //   displayMedium: test,
+  //         //   displaySmall: test,
+  //         //   headlineLarge: test,
+  //         //   headlineMedium: test,
+  //         //   headlineSmall: test,
+  //         //labelLarge: test,
+  //         // labelMedium: test,
+  //         // labelSmall: test,
+  //         //   titleLarge: test,
+  //         //   titleMedium: test,
+  //         //   titleSmall: test,
+  //         // ),
+  //         // appBarTheme: const AppBarTheme(
+  //         //   // backgroundColor: Colors.white,
+  //         //   // foregroundColor: Colors.black,
+  //         //   titleTextStyle: test,
+  //         //   toolbarTextStyle: test,
+  //         )
+  //     .apply(
+  //   bodyColor: AppColors.text,
+
+  // displayColor: Colors.blue,
 );

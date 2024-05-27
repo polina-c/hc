@@ -21,57 +21,64 @@ class AppScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: Sizes.toolbarHeight,
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                const ImageIcon(
-                  AssetImage('assets/logo.png'),
-                  color: AppColors.logo,
-                ),
-                _AppBarItem(
-                  text: 'Happy Creek',
-                  type: AppBarTypes.title,
-                  onPressed: route == AppRoutes.home
-                      ? null
-                      : () => push(AppRoutes.home, context),
-                ),
-                ...appMenu.entries.map(
-                  (e) => _MenuItem(
-                    route: e.key,
-                    selected: route,
-                    displayName: e.value,
+    return new DefaultTextStyle(
+      style: new TextStyle(
+        inherit: true,
+        fontSize: FontSizes.body,
+        color: AppColors.text,
+      ),
+      child: Scaffold(
+        appBar: AppBar(
+          toolbarHeight: Sizes.toolbarHeight,
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  const ImageIcon(
+                    AssetImage('assets/logo.png'),
+                    color: AppColors.logo,
                   ),
-                ),
+                  _AppBarItem(
+                    text: 'Happy Creek',
+                    type: AppBarTypes.title,
+                    onPressed: route == AppRoutes.home
+                        ? null
+                        : () => push(AppRoutes.home, context),
+                  ),
+                  ...appMenu.entries.map(
+                    (e) => _MenuItem(
+                      route: e.key,
+                      selected: route,
+                      displayName: e.value,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: Sizes.sublineSpace),
+              _AppBarItem(
+                text: 'Emotional and social education for children',
+                type: AppBarTypes.subLine,
+              ),
+            ],
+          ),
+          centerTitle: false,
+          automaticallyImplyLeading: false, // Remove back button
+          backgroundColor: AppColors.background,
+        ),
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(height: Sizes.paddingAfterTopBar),
+                screen.content(context),
+                const SizedBox(height: Sizes.paddingAfterBody),
+                Image.asset('${imagePath}images/ds.png'),
+                Text('${defaultTargetPlatform.name}, $_version'),
               ],
             ),
-            SizedBox(height: Sizes.sublineSpace),
-            _AppBarItem(
-              text: 'Emotional and social education for children',
-              type: AppBarTypes.subLine,
-            ),
-          ],
-        ),
-        centerTitle: false,
-        automaticallyImplyLeading: false, // Remove back button
-        backgroundColor: AppColors.background,
-      ),
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(height: Sizes.paddingAfterTopBar),
-              screen.content(context),
-              const SizedBox(height: Sizes.paddingAfterBody),
-              Image.asset('${imagePath}images/ds.png'),
-              Text('${defaultTargetPlatform.name}, $_version'),
-            ],
           ),
         ),
       ),

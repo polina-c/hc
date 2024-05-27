@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../shared/bricks/markdown.dart';
+import '../shared/bricks/text.dart';
 import '../shared/framework/screen.dart';
 
 final teamScreen = AppScreen((_) => const _Screen());

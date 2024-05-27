@@ -15,6 +15,7 @@ abstract class TextStyles {
     return theme.textTheme.labelLarge!.copyWith(
       fontWeight: FontWeight.w100,
       color: AppColors.text,
+      fontSize: FontSizes.body,
     );
   }
 
