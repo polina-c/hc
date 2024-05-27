@@ -3,6 +3,7 @@ import 'package:hc_web/shared/bricks/fab.dart';
 import 'package:hc_web/shared/bricks/utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../shared/bricks/card.dart';
 import '../../shared/bricks/layout.dart';
 import '../../shared/bricks/text.dart';
 import '../../shared/framework/screen.dart';
@@ -76,43 +77,40 @@ class _Card extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => launchUrl(Uri.parse(isWebOnIos ? item.iosLink : item.link)),
-      child: Card(
-        color: const Color.fromARGB(255, 171, 228, 255),
-        child: Container(
-          height: 290,
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-          padding: EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(
-                child: FittedBox(
-                  child: Container(
-                    clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Image.asset(
-                      '$imagePath${item.image}',
-                      fit: BoxFit.fill,
-                    ),
+    return AppCard(
+      link: Uri.parse(isWebOnIos ? item.iosLink : item.link),
+      child: Container(
+        height: 290,
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+        padding: EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              child: FittedBox(
+                child: Container(
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Image.asset(
+                    '$imagePath${item.image}',
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),
-              SizedBox(height: 20),
-              Text(
-                item.title,
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              item.title,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
               ),
-              SizedBox(height: 10),
-              Text(item.description, softWrap: true),
-            ],
-          ),
+            ),
+            SizedBox(height: 10),
+            Text(item.description, softWrap: true),
+          ],
         ),
       ),
     );
