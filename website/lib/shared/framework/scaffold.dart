@@ -8,7 +8,7 @@ import 'app_structure.dart';
 import 'screen.dart';
 import '../design/styles.dart';
 
-const _version = 2;
+const _version = 5;
 
 class AppScaffold extends StatelessWidget {
   const AppScaffold(
@@ -30,12 +30,13 @@ class AppScaffold extends StatelessWidget {
       ),
       child: Scaffold(
         appBar: AppBar(
-          toolbarHeight: Sizes.toolbarHeight,
+          toolbarHeight: 140,
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
+              Wrap(
+                direction: Axis.horizontal,
+                crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
                   const ImageIcon(
                     AssetImage('assets/logo.png'),
@@ -57,11 +58,11 @@ class AppScaffold extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: Sizes.sublineSpace),
-              // Divider(endIndent: 80),
-              _AppBarItem(
-                text: 'Emotional and social education for children',
-                type: AppBarTypes.subLine,
+              SizedBox(height: 12),
+              AppText(
+                'Emotional and social education for children',
+                style: TextStyles.subLine(context),
+                textAlign: TextAlign.left,
               ),
             ],
           ),
@@ -74,7 +75,7 @@ class AppScaffold extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(height: Sizes.paddingAfterTopBar),
+                const SizedBox(height: 20),
                 screen.content(context),
                 const SizedBox(height: Sizes.paddingAfterBody),
                 Image.asset('${imagePath}images/ds.png'),
@@ -120,13 +121,6 @@ class _AppBarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (type == AppBarTypes.subLine) {
-      return AppText(
-        text,
-        style: TextStyles.subLine(context),
-        textAlign: TextAlign.left,
-      );
-    }
     return TextButton(
       onPressed: onPressed,
       style: ButtonStyles.appBarItem(context, type),

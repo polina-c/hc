@@ -17,6 +17,8 @@ class AppText extends StatelessWidget {
       text,
       style: style ?? TextStyles.normal(context),
       textAlign: textAlign,
+      softWrap: true,
+      overflow: TextOverflow.visible,
     );
   }
 }

@@ -58,11 +58,14 @@ class _Text1 extends StatelessWidget {
       child: AppMarkdown(
         '''
 Grow up your children with skills to
-communicate powerfully, to deal with emotions,
-to navigate social situations and to feel safe
+**communicate** powerfully, to **deal** with emotions,
+to **navigate** social situations and to **feel safe**
 asking for help.
 
 \v
+
+&nbsp;
+
 
 [Our Team]($_teamLink) includes educators, psychologists,
 designers, software engineers and parents.''',
@@ -84,7 +87,8 @@ class _Text2 extends StatelessWidget {
 # Welcome to Happy Creek!
 
 \v
-We are connecting modern technologies and human wisdom
+
+We are connecting modern **technologies** and human **wisdom**
 to enable **emotional and
 social education** for more children.
                       '''),

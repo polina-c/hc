@@ -15,11 +15,6 @@ class AppColors {
 abstract class Sizes {
   static const columnWidth = 500.0;
   static const paddingAfterBody = 70.0;
-
-  static const sublineSpace = 10.0;
-  static const toolbarHeight = 80.0;
-  static const paddingAfterTopBar = 40.0;
-
   static const border = 2.0;
 }
 

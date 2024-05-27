@@ -6,7 +6,6 @@ import '../bricks/border.dart';
 
 enum AppBarTypes {
   title,
-  subLine,
   menuSelected,
   menuClickable,
 }
@@ -39,7 +38,6 @@ abstract class ButtonStyles {
       AppBarTypes.title => TextStyles.title(context),
       AppBarTypes.menuSelected => TextStyles.activeMenu(context),
       AppBarTypes.menuClickable => TextStyles.normal(context),
-      AppBarTypes.subLine => throw StateError('subline is not a button'),
     };
 
     return TextButton.styleFrom(
