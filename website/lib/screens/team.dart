@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hc_web/shared/bricks/layout.dart';
 
 import '../shared/bricks/text.dart';
 import '../shared/framework/screen.dart';
@@ -10,27 +11,43 @@ class _Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // `\v` adds vertical space
-    return const AppMarkdown('''
-
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AppColumn(
+              child: AppMarkdown('''
 # Our Team
-
-\v
 
 The team is led by [Polina Cherkasova](https://twitter.com/PolinaCC), software engineer, creator of
 [layerlens](https://pub.dev/packages/layerlens)
 , member of [Flutter](https://flutter.dev/)
 engineering team, mom of grown children,
 participant of many psychological practices, programs and retreats.
-
-\v
-
+                      '''),
+            ),
+            SizedBox(
+              width: 300,
+              child: Image.asset('images/team/team.jpg'),
+            ),
+          ],
+        ),
+        AppColumn(
+          child: AppMarkdown(
+            '''
 ## Contributors
 - Jessi Back, mom, student of NWIC
 - [Maria Nefedeva](https://www.marianefedyeva.com/), UX designer, mom
 - [Mish Cherkasov](https://www.instagram.com/mish.cherkasov), visual content consultant
 
 and others who prefer to stay anonymous
-''');
+''',
+          ),
+        ),
+      ],
+    );
   }
 }
