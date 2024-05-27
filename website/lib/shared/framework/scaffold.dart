@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hc_web/shared/design/theme.dart';
 
+import '../bricks/text.dart';
 import '../bricks/utils.dart';
 import 'app_structure.dart';
 import 'screen.dart';
@@ -119,9 +120,9 @@ class _AppBarItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (type == AppBarTypes.subLine) {
-      return Text(
+      return AppText(
         text,
-        style: TextStyles.subLine(context),
+        // style: TextStyles.subLine(context),
         textAlign: TextAlign.left,
       );
     }

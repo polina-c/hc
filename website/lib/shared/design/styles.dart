@@ -27,8 +27,8 @@ abstract class TextStyles {
         fontFamily: Fonts.headers.fontFamily,
       );
 
-  static TextStyle subLine(BuildContext context) => normal(context)
-      .copyWith(fontWeight: FontWeight.w600, color: AppColors.subLine);
+  // static TextStyle subLine(BuildContext context) => normal(context)
+  //     .copyWith(fontWeight: FontWeight.w600, color: AppColors.subLine);
 }
 
 abstract class ButtonStyles {
