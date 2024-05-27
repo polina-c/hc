@@ -8,54 +8,70 @@ import '../shared/framework/screen.dart';
 
 late final homeScreen = AppScreen((_) => const _Screen());
 
+const _teamLink = 'team';
+
 class _Screen extends StatelessWidget {
   const _Screen();
 
   @override
   Widget build(BuildContext context) {
-    return AppColumn(
-      child: Column(
-        children: [
-          _Text(),
-          Fab(
-            callback: () => push(AppRoutes.explore, context),
-            label: 'Explore',
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _Text extends StatelessWidget {
-  const _Text();
-
-  @override
-  Widget build(BuildContext context) {
-    const teamLink = 'team';
-    return AppMarkdown(
-      '''
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Row(
+          //crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            AppColumn(
+              child: AppMarkdown('''
 # Welcome to Happy Creek!
 
 \v
-
 We are connecting modern technologies and human wisdom
 to enable **emotional and
 social education** for more children.
-
-We want more children to grow up with skills to
+                      '''),
+            ),
+            SizedBox(
+              width: 300,
+              child: Image.asset('images/home/learning-kids-with-mother.png'),
+            ),
+          ],
+        ),
+        Row(
+          //crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: SizedBox(
+                width: 300,
+                child: Image.asset('images/home/learning-kids-with-father.jpg'),
+              ),
+            ),
+            AppColumn(
+              child: AppMarkdown(
+                '''
+Grow up your children with skills to
 communicate powerfully, to deal with emotions,
-to navigate social situations and to feel safe to
-ask for help when they need it.
-
-[Our Team]($teamLink) includes educators, psychologists,
-designers, software engineers and parents.
+to navigate social situations and to feel safe
+asking for help.
 
 \v
-        ''',
-      onTapLink: {
-        teamLink: () => push(AppRoutes.team, context),
-      },
+
+[Our Team]($_teamLink) includes educators, psychologists,
+designers, software engineers and parents.''',
+                onTapLink: {
+                  _teamLink: () => push(AppRoutes.team, context),
+                },
+              ),
+            ),
+          ],
+        ),
+        SizedBox(height: 80),
+        Fab(
+          callback: () => push(AppRoutes.explore, context),
+          label: 'Explore Resources',
+        ),
+      ],
     );
   }
 }
