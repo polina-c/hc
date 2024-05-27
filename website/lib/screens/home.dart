@@ -18,35 +18,47 @@ class _Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Row(
-          //crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            AppColumn(
-              child: AppMarkdown('''
-# Welcome to Happy Creek!
+    return FittedBox(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            //crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _Text2(),
+              AppImage(300, 'images/home/learning-kids-with-mother.png'),
+            ],
+          ),
+          Row(
+            //crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child:
+                    AppImage(300, 'images/home/learning-kids-with-father.jpg'),
+              ),
+              _Text1(),
+            ],
+          ),
+          SizedBox(height: 80),
+          Fab(
+            callback: () => push(AppRoutes.explore, context),
+            label: 'Explore Resources',
+          ),
+        ],
+      ),
+    );
+  }
+}
 
-\v
-We are connecting modern technologies and human wisdom
-to enable **emotional and
-social education** for more children.
-                      '''),
-            ),
-            AppImage(300, 'images/home/learning-kids-with-mother.png'),
-          ],
-        ),
-        Row(
-          //crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: AppImage(300, 'images/home/learning-kids-with-father.jpg'),
-            ),
-            AppColumn(
-              child: AppMarkdown(
-                '''
+class _Text1 extends StatelessWidget {
+  const _Text1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppColumn(
+      child: AppMarkdown(
+        '''
 Grow up your children with skills to
 communicate powerfully, to deal with emotions,
 to navigate social situations and to feel safe
@@ -56,19 +68,28 @@ asking for help.
 
 [Our Team]($_teamLink) includes educators, psychologists,
 designers, software engineers and parents.''',
-                onTapLink: {
-                  _teamLink: () => push(AppRoutes.team, context),
-                },
-              ),
-            ),
-          ],
-        ),
-        SizedBox(height: 80),
-        Fab(
-          callback: () => push(AppRoutes.explore, context),
-          label: 'Explore Resources',
-        ),
-      ],
+        onTapLink: {
+          _teamLink: () => push(AppRoutes.team, context),
+        },
+      ),
+    );
+  }
+}
+
+class _Text2 extends StatelessWidget {
+  const _Text2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppColumn(
+      child: AppMarkdown('''
+# Welcome to Happy Creek!
+
+\v
+We are connecting modern technologies and human wisdom
+to enable **emotional and
+social education** for more children.
+                      '''),
     );
   }
 }

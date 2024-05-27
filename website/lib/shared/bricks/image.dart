@@ -15,7 +15,7 @@ class AppImage extends StatelessWidget {
       width: width,
       child: Bordered(
         child: Image.asset(
-          '${imagePath}images/home/learning-kids-with-father.jpg',
+          '${imagePath}$path',
         ),
       ),
     );

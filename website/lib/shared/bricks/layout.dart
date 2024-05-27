@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../design/styles.dart';
 import '../design/theme.dart';
 
 class AppColumn extends StatelessWidget {

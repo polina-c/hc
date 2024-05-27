@@ -19,6 +19,7 @@ class _Screen extends StatelessWidget {
     return Column(
       children: [
         AppColumn(
+          width: 600,
           child: Column(
             children: const [
               _Text(),
