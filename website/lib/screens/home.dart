@@ -3,7 +3,10 @@ import 'package:hc_web/shared/bricks/fab.dart';
 import 'package:hc_web/shared/bricks/layout.dart';
 import 'package:hc_web/shared/framework/app_structure.dart';
 
+import '../shared/bricks/border.dart';
+import '../shared/bricks/image.dart';
 import '../shared/bricks/text.dart';
+import '../shared/design/styles.dart';
 import '../shared/framework/screen.dart';
 
 late final homeScreen = AppScreen((_) => const _Screen());
@@ -31,10 +34,7 @@ to enable **emotional and
 social education** for more children.
                       '''),
             ),
-            SizedBox(
-              width: 300,
-              child: Image.asset('images/home/learning-kids-with-mother.png'),
-            ),
+            AppImage(300, 'images/home/learning-kids-with-mother.png'),
           ],
         ),
         Row(
@@ -42,10 +42,7 @@ social education** for more children.
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 20.0),
-              child: SizedBox(
-                width: 300,
-                child: Image.asset('images/home/learning-kids-with-father.jpg'),
-              ),
+              child: AppImage(300, 'images/home/learning-kids-with-father.jpg'),
             ),
             AppColumn(
               child: AppMarkdown(

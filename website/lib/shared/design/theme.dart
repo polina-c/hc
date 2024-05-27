@@ -3,12 +3,24 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppColors {
   static const text = Color.fromARGB(255, 41, 4, 63);
+  static const border = text;
   static const logo = Colors.amber;
   static const link = Colors.blueAccent;
   static const primary = Colors.yellow; // #FFC107
   static const background = Colors.white;
   static const subLine = Colors.blue;
   static const card = const Color.fromARGB(255, 171, 228, 255);
+}
+
+abstract class Sizes {
+  static const columnWidth = 500.0;
+  static const paddingAfterBody = 70.0;
+
+  static const sublineSpace = 10.0;
+  static const toolbarHeight = 80.0;
+  static const paddingAfterTopBar = 40.0;
+
+  static const border = 2.0;
 }
 
 abstract class FontSizes {

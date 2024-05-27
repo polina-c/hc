@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../design/styles.dart';
+import '../design/theme.dart';
 
 class AppColumn extends StatelessWidget {
   const AppColumn({super.key, required this.child, this.width});

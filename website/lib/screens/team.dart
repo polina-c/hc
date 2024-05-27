@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hc_web/shared/bricks/layout.dart';
 
+import '../shared/bricks/image.dart';
 import '../shared/bricks/text.dart';
 import '../shared/framework/screen.dart';
 
@@ -30,10 +31,8 @@ engineering team, mom of grown children,
 participant of many psychological practices, programs and retreats.
                       '''),
             ),
-            SizedBox(
-              width: 280,
-              child: Image.asset('images/team/team.jpg'),
-            ),
+            SizedBox(width: 20),
+            AppImage(280, 'images/team/team.jpg'),
           ],
         ),
         AppColumn(

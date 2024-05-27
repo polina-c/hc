@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:hc_web/shared/design/theme.dart';
 
+import '../bricks/border.dart';
+
 enum AppBarTypes {
   title,
   subLine,
@@ -50,23 +52,6 @@ abstract class ButtonStyles {
   static ButtonStyle fab(BuildContext context) {
     return FilledButton.styleFrom(shape: borderedShape);
   }
-}
-
-final borderedShape = RoundedRectangleBorder(
-  borderRadius: BorderRadius.circular(18.0),
-  side: BorderSide(
-    color: AppColors.text,
-    width: 2.0,
-  ),
-);
-
-abstract class Sizes {
-  static const columnWidth = 500.0;
-  static const paddingAfterBody = 70.0;
-
-  static const sublineSpace = 10.0;
-  static const toolbarHeight = 80.0;
-  static const paddingAfterTopBar = 40.0;
 }
 
 final markdownStyleSheet = MarkdownStyleSheet(
