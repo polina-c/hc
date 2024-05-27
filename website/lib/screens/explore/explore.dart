@@ -26,6 +26,7 @@ class _Screen extends StatelessWidget {
             ],
           ),
         ),
+        SizedBox(height: 40),
         _Cards(),
       ],
     );
@@ -52,20 +53,10 @@ class _Cards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      // Is needed for mobile browsers, to scroll with tap and drag.
-      physics: NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-      padding: const EdgeInsets.all(50),
-      itemCount: items.length,
-      itemBuilder: (ctx, i) => _Card(items[i]),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        childAspectRatio: 1.0,
-        crossAxisSpacing: 20,
-        mainAxisSpacing: 20,
-        mainAxisExtent: 264,
-      ),
+    return Wrap(
+      spacing: 20,
+      runSpacing: 20,
+      children: items.map((i) => _Card(i)).toList(),
     );
   }
 }
@@ -81,6 +72,7 @@ class _Card extends StatelessWidget {
       link: Uri.parse(isWebOnIos ? item.iosLink : item.link),
       child: Container(
         height: 290,
+        width: 290,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
         padding: EdgeInsets.all(20),
         child: Column(

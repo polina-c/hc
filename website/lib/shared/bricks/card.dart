@@ -15,7 +15,6 @@ class AppCard extends StatelessWidget {
     return InkWell(
       onTap: () => link == null ? null : launchUrl(link!),
       child: Card(
-        shape: borderedShape,
         color: AppColors.card,
         child: child,
       ),
