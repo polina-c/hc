@@ -22,6 +22,7 @@ class _Screen extends StatelessWidget {
           child: Column(
             children: const [
               _Text(),
+              SizedBox(height: 20),
               ShareFab(),
             ],
           ),

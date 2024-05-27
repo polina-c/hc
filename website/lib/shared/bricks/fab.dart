@@ -41,7 +41,7 @@ class Fab extends StatelessWidget {
           if (question != null) ...[
             AppText(question!),
             SizedBox(
-              width: 10,
+              width: 20,
             ),
           ],
           FilledButton(

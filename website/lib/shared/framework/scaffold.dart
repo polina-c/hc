@@ -36,7 +36,7 @@ class AppScaffold extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  const ImageIcon(
+                  ImageIcon(
                     AssetImage('assets/logo.png'),
                     color: AppColors.logo,
                   ),

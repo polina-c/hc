@@ -4,11 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 class AppColors {
   static const text = Color.fromARGB(255, 41, 4, 63);
   static const border = text;
-  static const logo = Colors.amber;
+  static final logo = Colors.pink.shade500;
   static const link = Colors.blueAccent;
   static const primary = Colors.yellow; // #FFC107
   static const background = Colors.white;
-  static const subLine = text;
+  static final subLine = Colors.blue.shade700;
   static const card = const Color.fromARGB(255, 171, 228, 255);
 
   static const divider = Colors.grey;
