@@ -27,8 +27,8 @@ abstract class TextStyles {
         fontFamily: Fonts.headers.fontFamily,
       );
 
-  // static TextStyle subLine(BuildContext context) => normal(context)
-  //     .copyWith(fontWeight: FontWeight.w600, color: AppColors.subLine);
+  static TextStyle subLine(BuildContext context) => normal(context)
+      .copyWith(fontWeight: FontWeight.w600, color: AppColors.subLine);
 }
 
 abstract class ButtonStyles {
@@ -64,8 +64,8 @@ abstract class Sizes {
   static const columnWidth = 500.0;
   static const paddingAfterBody = 70.0;
 
-  static const sublineSpace = 12.0;
-  static const toolbarHeight = 65.0;
+  static const sublineSpace = 10.0;
+  static const toolbarHeight = 80.0;
   static const paddingAfterTopBar = 40.0;
 }
 

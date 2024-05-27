@@ -58,6 +58,7 @@ class AppScaffold extends StatelessWidget {
                 ],
               ),
               SizedBox(height: Sizes.sublineSpace),
+              // Divider(endIndent: 80),
               _AppBarItem(
                 text: 'Emotional and social education for children',
                 type: AppBarTypes.subLine,
@@ -122,7 +123,7 @@ class _AppBarItem extends StatelessWidget {
     if (type == AppBarTypes.subLine) {
       return AppText(
         text,
-        // style: TextStyles.subLine(context),
+        style: TextStyles.subLine(context),
         textAlign: TextAlign.left,
       );
     }

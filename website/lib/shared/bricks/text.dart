@@ -5,15 +5,17 @@ import 'package:url_launcher/url_launcher.dart';
 import '../design/styles.dart';
 
 class AppText extends StatelessWidget {
-  const AppText(this.text, {super.key, this.textAlign});
+  const AppText(this.text, {super.key, this.textAlign, this.style});
 
   final String text;
   final TextAlign? textAlign;
+  final TextStyle? style;
+
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyles.normal(context),
+      style: style ?? TextStyles.normal(context),
       textAlign: textAlign,
     );
   }
