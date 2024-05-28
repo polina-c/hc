@@ -54,7 +54,8 @@ class _Text2 extends StatelessWidget {
         '''
 Grow up your children with skills to
 **communicate** powerfully, to **deal** with emotions,
-to **navigate** social situations and to **feel safe**
+to **navigate** social situations, to feel **freedom**
+thinking differently and to **feel safe**
 asking for help.
 
 &nbsp;
