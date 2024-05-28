@@ -18,7 +18,7 @@ class _Screen extends StatelessWidget {
     return Column(
       children: [
         AppColumn(
-          width: 600,
+          width: 500,
           child: Column(
             children: const [
               _Text(),
@@ -73,7 +73,7 @@ class _Card extends StatelessWidget {
       link: Uri.parse(isWebOnIos ? item.iosLink : item.link),
       child: Container(
         height: 290,
-        width: 290,
+        width: 500,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
         padding: EdgeInsets.all(20),
         child: Column(
