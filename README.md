@@ -4,6 +4,8 @@
 
 This repo contains source code for [Happy Creek](http://happy-creek.com).
 
+Feel free to use it as a scaffold/boilerplate for a Flutter web site.
+
 ## Web Site
 
 ### Hosting
