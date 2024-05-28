@@ -16,41 +16,36 @@ class _Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FittedBox(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Row(
-            //crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _Text2(),
-              AppImage(300, 'images/home/learning-kids-with-mother.png'),
-            ],
-          ),
-          Row(
-            //crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child:
-                    AppImage(300, 'images/home/learning-kids-with-father.jpg'),
-              ),
-              _Text1(),
-            ],
-          ),
-          SizedBox(height: 80),
-          Fab(
-            callback: () => push(AppRoutes.explore, context),
-            label: 'Explore Resources',
-          ),
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Wrap(
+          alignment: WrapAlignment.center,
+          children: [
+            _Text1(),
+            AppImage(300, 'images/home/learning-kids-with-mother.png'),
+          ],
+        ),
+        SizedBox(height: 20),
+        Wrap(
+          alignment: WrapAlignment.center,
+          children: [
+            AppImage(300, 'images/home/learning-kids-with-father.jpg'),
+            _Text2(),
+          ],
+        ),
+        SizedBox(height: 40),
+        Fab(
+          callback: () => push(AppRoutes.explore, context),
+          label: 'Explore Resources',
+        ),
+      ],
     );
   }
 }
 
-class _Text1 extends StatelessWidget {
-  const _Text1();
+class _Text2 extends StatelessWidget {
+  const _Text2();
 
   @override
   Widget build(BuildContext context) {
@@ -62,10 +57,7 @@ Grow up your children with skills to
 to **navigate** social situations and to **feel safe**
 asking for help.
 
-\v
-
 &nbsp;
-
 
 [Our Team]($_teamLink) includes educators, psychologists,
 designers, software engineers and parents.''',
@@ -77,8 +69,8 @@ designers, software engineers and parents.''',
   }
 }
 
-class _Text2 extends StatelessWidget {
-  const _Text2();
+class _Text1 extends StatelessWidget {
+  const _Text1();
 
   @override
   Widget build(BuildContext context) {
