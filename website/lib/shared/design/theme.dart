@@ -11,7 +11,7 @@ class AppColors {
   static final subLine = Colors.blue.shade700;
   static const card = const Color.fromARGB(255, 171, 228, 255);
 
-  static const divider = Colors.grey;
+  static final divider = Colors.grey.shade200;
 }
 
 abstract class Sizes {
