@@ -10,7 +10,7 @@ class ShareFab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Fab(
-      question: 'Did we miss something?\nDo you have ideas?',
+      question: 'Did we miss something?\nDo you have ideas? feedback?',
       label: 'Share',
       callback: () => launchUrl(
         Uri.parse('https://forms.gle/GVBRUABAPEHpEQj97'),
