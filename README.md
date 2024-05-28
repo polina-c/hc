@@ -15,7 +15,6 @@ Or use Paint S to create a PNG and provide provide the source near it.
 Run:
 
 ```
-cd website
 dart run flutter_launcher_icons
 ```
 

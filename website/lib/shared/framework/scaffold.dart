@@ -8,7 +8,7 @@ import 'app_structure.dart';
 import 'screen.dart';
 import '../design/styles.dart';
 
-const _version = 7;
+const _version = 8;
 
 class AppScaffold extends StatelessWidget {
   const AppScaffold(
@@ -39,7 +39,7 @@ class AppScaffold extends StatelessWidget {
               Row(
                 children: [
                   ImageIcon(
-                    AssetImage('assets/logo.png'),
+                    AssetImage('assets/images/logo.png'),
                     color: AppColors.logo,
                   ),
                   _AppBarItem(
