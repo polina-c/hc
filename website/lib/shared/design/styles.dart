@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:hc_web/shared/design/theme.dart';
 
-import '../bricks/border.dart';
+import 'border.dart';
 
 enum AppBarTypes {
   title,

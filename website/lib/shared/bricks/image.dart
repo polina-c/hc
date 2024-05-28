@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hc_web/shared/bricks/border.dart';
+import 'package:hc_web/shared/design/border.dart';
 
 import 'utils.dart';
 
