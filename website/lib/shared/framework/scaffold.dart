@@ -8,7 +8,7 @@ import 'app_structure.dart';
 import 'screen.dart';
 import '../design/styles.dart';
 
-const _version = 8;
+const _version = 9;
 
 class AppScaffold extends StatelessWidget {
   const AppScaffold(
