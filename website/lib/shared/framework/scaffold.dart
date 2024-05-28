@@ -8,7 +8,7 @@ import 'app_structure.dart';
 import 'screen.dart';
 import '../design/styles.dart';
 
-const _version = 6;
+const _version = 7;
 
 class AppScaffold extends StatelessWidget {
   const AppScaffold(
@@ -22,6 +22,9 @@ class AppScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final bool hamburger = screenWidth < 600;
+
     return new DefaultTextStyle(
       style: new TextStyle(
         inherit: true,
@@ -32,7 +35,6 @@ class AppScaffold extends StatelessWidget {
         appBar: AppBar(
           toolbarHeight: 140,
           title: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
@@ -48,13 +50,7 @@ class AppScaffold extends StatelessWidget {
                         : () => push(AppRoutes.home, context),
                   ),
                   Expanded(child: SizedBox()),
-                  ...appMenu.entries.map(
-                    (e) => _MenuItem(
-                      route: e.key,
-                      selected: route,
-                      displayName: e.value,
-                    ),
-                  ),
+                  if (hamburger) _Hamburger(route) else _Menu(route),
                 ],
               ),
               Divider(color: AppColors.divider, thickness: 1),
@@ -85,6 +81,52 @@ class AppScaffold extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _Menu extends StatelessWidget {
+  const _Menu(this.route);
+
+  final String route;
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      children: appMenu.entries
+          .map(
+            (e) => _MenuItem(
+              route: e.key,
+              selected: route,
+              displayName: e.value,
+            ),
+          )
+          .toList(),
+    );
+  }
+}
+
+class _Hamburger extends StatelessWidget {
+  const _Hamburger(this.route);
+
+  final String route;
+
+  @override
+  Widget build(BuildContext context) {
+    return PopupMenuButton<String>(
+      icon: Icon(Icons.more_vert),
+      itemBuilder: (BuildContext context) {
+        return appMenu.entries.map((e) {
+          return PopupMenuItem<String>(
+            value: 'menuItem',
+            child: _MenuItem(
+              route: e.key,
+              selected: route,
+              displayName: e.value,
+            ),
+          );
+        }).toList();
+      },
     );
   }
 }
