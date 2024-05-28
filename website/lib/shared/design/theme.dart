@@ -9,7 +9,7 @@ class AppColors {
   static const primary = Colors.yellow; // #FFC107
   static const background = Colors.white;
   static final subLine = Colors.blue.shade700;
-  static const card = const Color.fromARGB(255, 171, 228, 255);
+  static final card = const Color.fromARGB(255, 161, 232, 255);
 
   static final divider = Colors.grey.shade200;
 }
