@@ -22,6 +22,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/logo.png
+    - assets/images/logo_flipped.png
     - assets/images/ds.png
     - assets/images/explore/feeling_arrow.webp
     - assets/images/explore/how_we_feel.webp

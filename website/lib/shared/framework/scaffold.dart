@@ -39,7 +39,7 @@ class AppScaffold extends StatelessWidget {
               Row(
                 children: [
                   ImageIcon(
-                    AssetImage('assets/images/logo.png'),
+                    AssetImage('assets/images/logo_flipped.png'),
                     color: AppColors.logo,
                   ),
                   _AppBarItem(
