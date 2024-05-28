@@ -29,6 +29,15 @@ final items = [
         'https://play.google.com/store/apps/details?id=air.com.sesameworkshop.ResilienceThinkBreathDo',
   ),
   ExploreItem(
+    title: 'Wisdom: The World of Emotions',
+    description: 'Recognize and regulate anger in self and others',
+    image: 'images/explore/wisdom.webp',
+    iosLink:
+        'https://apps.apple.com/us/app/wisdom-the-world-of-emotions/id1182494093',
+    link:
+        'https://play.google.com/store/apps/details?id=com.WisdomEnglishunlockA.ipa',
+  ),
+  ExploreItem(
     title: 'Feeling Arrow',
     description: 'Control people with arrows of feelings',
     image: 'images/explore/feeling_arrow.webp',
