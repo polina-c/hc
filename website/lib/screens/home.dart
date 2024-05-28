@@ -37,7 +37,7 @@ class _Screen extends StatelessWidget {
         SizedBox(height: 30),
         Fab(
           callback: () => push(AppRoutes.explore, context),
-          label: 'Explore Resources',
+          label: 'Explore Tools',
         ),
       ],
     );

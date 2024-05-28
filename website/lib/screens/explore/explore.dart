@@ -42,7 +42,7 @@ class _Text extends StatelessWidget {
     return const AppMarkdown('''
 # Explore
 
-We listed some educational resources. Choose what you like and what works for you.
+We listed some educational tools. Choose what you like and what works for you.
 
 
 '''); // Button 'let us know'
