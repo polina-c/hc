@@ -40,7 +40,7 @@ class _Text extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const AppMarkdown('''
-# Explore
+# Explore Tools
 
 We listed some educational tools. Choose what you like and what works for you.
 
