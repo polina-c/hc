@@ -4,21 +4,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../design/styles.dart';
 
-class ShareFab extends StatelessWidget {
-  const ShareFab({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Fab(
-      question: 'Did we miss something?\nDo you have new tool ideas? feedback?',
-      label: 'Share',
-      callback: () => launchUrl(
-        Uri.parse('https://forms.gle/GVBRUABAPEHpEQj97'),
-      ),
-    );
-  }
-}
-
 /// A floating action button.
 class Fab extends StatelessWidget {
   const Fab({

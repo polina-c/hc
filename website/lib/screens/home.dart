@@ -37,9 +37,29 @@ class _Screen extends StatelessWidget {
         SizedBox(height: 30),
         Fab(
           callback: () => push(AppRoutes.explore, context),
-          label: 'Explore Tools',
+          label: 'Explore Collection',
         ),
       ],
+    );
+  }
+}
+
+class _Text1 extends StatelessWidget {
+  const _Text1();
+
+  @override
+  Widget build(BuildContext context) {
+    return AppColumn(
+      child: AppMarkdown('''
+# Welcome to Happy Creek!
+
+\v
+
+A collection of games and tools designed to help parents
+in creating **quality playtime** with their children.
+The resources aim to foster **learning, emotional development,
+and social growth** in a fun and engaging manner.
+'''),
     );
   }
 }
@@ -66,25 +86,6 @@ designers, software engineers and parents.''',
           _teamLink: () => push(AppRoutes.team, context),
         },
       ),
-    );
-  }
-}
-
-class _Text1 extends StatelessWidget {
-  const _Text1();
-
-  @override
-  Widget build(BuildContext context) {
-    return AppColumn(
-      child: AppMarkdown('''
-# Welcome to Happy Creek!
-
-\v
-
-We are connecting modern **technologies** and human **wisdom**
-to enable **emotional and
-social education** for more children.
-                      '''),
     );
   }
 }
