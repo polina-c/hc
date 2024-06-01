@@ -10,7 +10,7 @@ import 'app_structure.dart';
 import 'screen.dart';
 import '../design/styles.dart';
 
-const _version = 9;
+const _version = 10;
 
 class AppScaffold extends StatefulWidget {
   const AppScaffold(
