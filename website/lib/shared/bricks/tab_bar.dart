@@ -6,7 +6,7 @@ class AppTabBar extends StatelessWidget {
   const AppTabBar(
       {super.key, required this.controller, required this.tabs, this.onTap});
 
-  final TabController controller;
+  final TabController? controller;
   final List<Widget> tabs;
   final void Function(int)? onTap;
 

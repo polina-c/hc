@@ -57,34 +57,27 @@ class _AppScaffoldState extends State<AppScaffold>
               children: [
                 Row(
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            ImageIcon(
-                              AssetImage('assets/images/logo_flipped.png'),
-                              color: AppColors.logo,
+                    SizedBox(
+                      width: 200,
+                      child: AppTabBar(
+                        controller: null,
+                        tabs: [
+                          Tab(
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                ImageIcon(
+                                  AssetImage('assets/images/logo_flipped.png'),
+                                  color: AppColors.logo,
+                                ),
+                                const SizedBox(width: 8),
+                                Text('Happy Creek'),
+                              ],
                             ),
-                            _AppBarItem(
-                              text: 'Happy Creek',
-                              type: AppBarTypes.title,
-                              onPressed: widget.route == AppRoutes.home
-                                  ? null
-                                  : () => push(AppRoutes.home, context),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 11,
-                        ),
-                        SizedBox(
-                          width: 300,
-                          child:
-                              Divider(color: AppColors.divider, thickness: 1),
-                        ),
-                      ],
+                          )
+                        ],
+                        onTap: null,
+                      ),
                     ),
 
                     Expanded(child: SizedBox()),
