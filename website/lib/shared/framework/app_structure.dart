@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class AppRoutes {
   static const String home = '/';
   static const String team = '/team';
-  static const String explore = '/explore';
+  static const String toys = '/toys';
 }
 
 const kExperiments = bool.fromEnvironment('experiments', defaultValue: false);
@@ -15,7 +15,7 @@ class FeatureFlags {
 
 const appMenu = {
   AppRoutes.home: 'Home',
-  AppRoutes.explore: 'Explore',
+  AppRoutes.toys: 'Toys',
   AppRoutes.team: 'Team',
 };
 

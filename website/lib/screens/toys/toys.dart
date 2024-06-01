@@ -24,7 +24,7 @@ class _Screen extends StatelessWidget {
             children: const [
               _Text(),
               SizedBox(height: 20),
-              ShareFab._ShareFab(),
+              ShareFab(),
             ],
           ),
         ),
@@ -36,13 +36,13 @@ class _Screen extends StatelessWidget {
 }
 
 class ShareFab extends StatelessWidget {
-  const ShareFab._ShareFab({super.key});
+  const ShareFab({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Fab(
       question:
-          'Did something from this list help you?\nDid we miss something?\nDo you have new tool ideas? feedback?',
+          'Did something from this list worked for you?\nDid we miss something?\nDo you have new tool ideas? feedback?',
       label: 'Share',
       callback: () => launchUrl(
         Uri.parse('https://forms.gle/GVBRUABAPEHpEQj97'),
@@ -57,14 +57,14 @@ class _Text extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const AppMarkdown('''
-# Explore
+# Explore Toys
 
-We listed games, movies and tools, that target the development
+We listed games, movies and tools, targeting development
 of emotional growth and social skills through
 engaging and interactive activities.
 
 Choose what you like and what works for you.
-'''); // Button 'let us know'
+''');
   }
 }
 

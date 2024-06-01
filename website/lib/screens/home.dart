@@ -36,8 +36,8 @@ class _Screen extends StatelessWidget {
         ),
         SizedBox(height: 30),
         Fab(
-          callback: () => push(AppRoutes.explore, context),
-          label: 'Explore Collection',
+          callback: () => push(AppRoutes.toys, context),
+          label: 'Explore Toys',
         ),
       ],
     );
@@ -55,9 +55,9 @@ class _Text1 extends StatelessWidget {
 
 \v
 
-A collection of games and tools designed to help parents
-in creating **quality playtime** with their children.
-The resources aim to foster **learning, emotional development,
+A collection of games movies and tools designed to create
+**quality playtime**.
+They aim to foster **learning, emotional development,
 and social growth** in a fun and engaging manner.
 '''),
     );

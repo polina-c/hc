@@ -5,7 +5,7 @@ Dependencies that create loops (inversions) are marked with `!`.
 
 ```mermaid
 flowchart TD;
-explore.dart-->_items.dart;
+toys.dart-->_items.dart;
 ```
 
 ### Inversions

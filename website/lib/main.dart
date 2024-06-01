@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hc_web/screens/explore/explore.dart';
+import 'package:hc_web/screens/toys/toys.dart';
 
 import 'shared/design/theme.dart';
 import 'screens/home.dart';
@@ -11,7 +11,7 @@ const _homeRoute = '/';
 
 final _screens = <String, AppScreen>{
   _homeRoute: homeScreen,
-  '/explore': exploreScreen,
+  '/toys': exploreScreen,
   '/team': teamScreen,
 };
 

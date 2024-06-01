@@ -24,17 +24,17 @@ flutter:
     - assets/images/logo.png
     - assets/images/logo_flipped.png
     - assets/images/ds.png
-    - assets/images/explore/feeling_arrow.webp
-    - assets/images/explore/how_we_feel.webp
-    - assets/images/explore/introducktion.webp
-    - assets/images/explore/peppy_pals.webp
-    - assets/images/explore/messenger.webp
-    - assets/images/explore/mira_gosha.png
-    - assets/images/explore/pluck_it.webp
-    - assets/images/explore/daniel.webp
-    - assets/images/explore/sesame.webp
-    - assets/images/explore/wisdom.webp
-    - assets/images/explore/zoo.png
+    - assets/images/toys/feeling_arrow.webp
+    - assets/images/toys/how_we_feel.webp
+    - assets/images/toys/introducktion.webp
+    - assets/images/toys/peppy_pals.webp
+    - assets/images/toys/messenger.webp
+    - assets/images/toys/mira_gosha.png
+    - assets/images/toys/pluck_it.webp
+    - assets/images/toys/daniel.webp
+    - assets/images/toys/sesame.webp
+    - assets/images/toys/wisdom.webp
+    - assets/images/toys/zoo.png
     - assets/images/home/learning-kids-with-father.jpg
     - assets/images/home/learning-kids-with-mother.png
     - assets/images/team/team.jpg
