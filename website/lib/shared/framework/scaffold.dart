@@ -105,6 +105,7 @@ class _AppScaffoldState extends State<AppScaffold>
                 AppText(
                   'Screen toys to foster emotional and social skills.',
                   style: AppTextStyles.subLine(context),
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 24),
                 widget.screen.content(context),
