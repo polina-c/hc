@@ -84,7 +84,7 @@ class _Cards extends StatelessWidget {
 class _Card extends StatelessWidget {
   const _Card(this.item);
 
-  final ExploreItem item;
+  final Toy item;
 
   @override
   Widget build(BuildContext context) {

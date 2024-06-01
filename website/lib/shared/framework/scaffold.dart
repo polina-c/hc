@@ -56,7 +56,7 @@ class AppScaffold extends StatelessWidget {
               Divider(color: AppColors.divider, thickness: 1),
               Center(
                 child: AppText(
-                  'Screen toys to foster emotional and social growth.',
+                  'Screen toys for emotional and social growth.',
                   style: TextStyles.subLine(context),
                   textAlign: TextAlign.center,
                 ),
