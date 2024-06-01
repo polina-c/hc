@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hc_web/shared/bricks/fab.dart';
 import 'package:hc_web/shared/bricks/utils.dart';
+import 'package:hc_web/shared/design/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../shared/bricks/card.dart';
@@ -59,8 +60,8 @@ class _Text extends StatelessWidget {
     return const AppMarkdown('''
 # Explore Toys
 
-We listed games, movies and tools, targeting
-of emotional and social skills through
+We listed games, movies and tools, which aim to foster
+emotional and social skills through
 engaging and interactive activities.
 
 Choose what you like and what works for you.
@@ -68,19 +69,49 @@ Choose what you like and what works for you.
   }
 }
 
-class _Cards extends StatelessWidget {
+class _Cards extends StatefulWidget {
   const _Cards();
 
   @override
+  State<_Cards> createState() => _CardsState();
+}
+
+class _CardsState extends State<_Cards> with SingleTickerProviderStateMixin {
+  late TabController _controller;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _controller = TabController(length: ToyTypes.values.length, vsync: this);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Wrap(
-          spacing: 20,
-          runSpacing: 20,
-          children: items.map((i) => _Card(i)).toList(),
-        ),
-      ],
+    final tabBar = new TabBar(
+      controller: _controller,
+      onTap: (value) {
+        setState(() {});
+      },
+      labelStyle: TextStyle(fontWeight: FontWeight.bold, color: AppColors.text),
+      unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
+      tabs: ToyTypes.values.map((t) => Tab(text: t.name)).toList(),
+      dividerColor: AppColors.divider,
+    );
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 40),
+      child: Column(
+        children: [
+          SizedBox(height: 50, child: tabBar),
+          SizedBox(height: 40),
+          Wrap(
+            spacing: 20,
+            runSpacing: 20,
+            children: items.map((i) => _Card(i)).toList(),
+          ),
+        ],
+      ),
     );
   }
 }
