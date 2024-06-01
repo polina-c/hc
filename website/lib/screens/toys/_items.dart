@@ -14,6 +14,14 @@ final items = [
     type: ToyTypes.movie,
   ),
   Toy(
+    title: 'Sesame Street',
+    description: 'Short animations in emotional development',
+    image: 'images/toys/mira_gosha.png',
+    link: 'https://www.youtube.com/@miragosha',
+    iosLink: 'https://www.youtube.com/@miragosha',
+    type: ToyTypes.movie,
+  ),
+  Toy(
     title: 'Daniel Tiger' 's Feelings',
     description: 'Play with Daniel Tiger and toys feelings',
     image: 'images/toys/daniel.webp',
@@ -21,7 +29,7 @@ final items = [
         'https://apps.apple.com/us/app/daniel-tigers-grr-ific-feelings/id899193797',
     link:
         'https://play.google.com/store/apps/details?id=org.pbskids.dtgrrificfeelings',
-    type: ToyTypes.movie,
+    type: ToyTypes.game,
   ),
   Toy(
     title: 'Breathe, Think, Do with Sesame',
@@ -31,7 +39,7 @@ final items = [
         'https://apps.apple.com/us/app/breathe-think-do-with-sesame/id721853597',
     link:
         'https://play.google.com/store/apps/details?id=air.com.sesameworkshop.ResilienceThinkBreathDo',
-    type: ToyTypes.movie,
+    type: ToyTypes.game,
   ),
   Toy(
     title: 'Wisdom: The World of Emotions',
@@ -41,7 +49,7 @@ final items = [
         'https://apps.apple.com/us/app/wisdom-the-world-of-emotions/id1182494093',
     link:
         'https://play.google.com/store/apps/details?id=com.WisdomEnglishunlockA.ipa',
-    type: ToyTypes.movie,
+    type: ToyTypes.game,
   ),
   Toy(
     title: 'Feeling Arrow',
@@ -50,7 +58,7 @@ final items = [
     iosLink: 'https://apps.apple.com/us/app/feeling-arrow/id1628597068',
     link:
         'https://play.google.com/store/apps/details?id=com.YsoCorp.Feelingarrow',
-    type: ToyTypes.movie,
+    type: ToyTypes.game,
   ),
   Toy(
     title: 'Zoo Academy',
@@ -58,7 +66,7 @@ final items = [
     image: 'images/toys/zoo.png',
     iosLink: 'https://www.centervention.com/zoo-academy/',
     link: 'https://www.centervention.com/zoo-academy/',
-    type: ToyTypes.movie,
+    type: ToyTypes.game,
   ),
   Toy(
     title: 'How We Feel',
@@ -67,7 +75,7 @@ final items = [
     iosLink: 'https://apps.apple.com/us/app/how-we-feel/id1562706384',
     link:
         'https://play.google.com/store/apps/details?id=org.howwefeel.moodmeter',
-    type: ToyTypes.movie,
+    type: ToyTypes.tool,
   ),
   Toy(
     title: 'Pluck It',
@@ -77,7 +85,7 @@ final items = [
         'https://apps.apple.com/us/app/pluck-it-hairs-and-emotions/id1377729521',
     link:
         'https://play.google.com/store/apps/details?id=com.feelinggame.pluckit',
-    type: ToyTypes.movie,
+    type: ToyTypes.game,
   ),
   Toy(
     title: 'Messenger Kids',
@@ -85,7 +93,7 @@ final items = [
     image: 'images/toys/messenger.webp',
     iosLink: 'https://apps.apple.com/us/app/messenger-kids/id1285713171',
     link: 'https://play.google.com/store/apps/details?id=com.facebook.talk',
-    type: ToyTypes.movie,
+    type: ToyTypes.tool,
   ),
   Toy(
     title: 'IntroDUCKtion',
@@ -94,16 +102,16 @@ final items = [
     iosLink:
         'https://apps.apple.com/us/app/introducktion-to-big-feelings/id553721733',
     link: 'https://play.google.com/store/apps/details?id=com.introDucktion',
-    type: ToyTypes.movie,
+    type: ToyTypes.game,
   ),
   Toy(
     title: 'Peppy Pals',
-    description: 'Game to toys emotions',
+    description: 'Game to explore emotions',
     image: 'images/toys/peppy_pals.webp',
     iosLink: 'https://apps.apple.com/us/app/peppy-pals/id1457065641',
     link:
         'https://play.google.com/store/apps/details?id=com.peppypals.socialskills',
-    type: ToyTypes.movie,
+    type: ToyTypes.game,
   ),
 ];
 
