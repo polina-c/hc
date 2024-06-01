@@ -10,7 +10,7 @@ enum AppBarTypes {
   menuClickable,
 }
 
-abstract class TextStyles {
+abstract class AppTextStyles {
   static TextStyle normal(BuildContext context) {
     final theme = Theme.of(context);
     return theme.textTheme.labelLarge!.copyWith(
@@ -20,10 +20,10 @@ abstract class TextStyles {
     );
   }
 
-  static TextStyle activeMenu(BuildContext context) =>
+  static TextStyle tab(BuildContext context) =>
       normal(context).copyWith(fontWeight: FontWeight.w900);
 
-  static TextStyle title(BuildContext context) => activeMenu(context).copyWith(
+  static TextStyle title(BuildContext context) => tab(context).copyWith(
         fontSize: FontSizes.appTitle,
         fontFamily: Fonts.headers.fontFamily,
       );
@@ -35,9 +35,9 @@ abstract class TextStyles {
 abstract class ButtonStyles {
   static ButtonStyle appBarItem(BuildContext context, AppBarTypes type) {
     final textStyle = switch (type) {
-      AppBarTypes.title => TextStyles.title(context),
-      AppBarTypes.menuSelected => TextStyles.activeMenu(context),
-      AppBarTypes.menuClickable => TextStyles.normal(context),
+      AppBarTypes.title => AppTextStyles.title(context),
+      AppBarTypes.menuSelected => AppTextStyles.tab(context),
+      AppBarTypes.menuClickable => AppTextStyles.normal(context),
     };
 
     return TextButton.styleFrom(

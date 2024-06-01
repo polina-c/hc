@@ -35,7 +35,7 @@ class Fab extends StatelessWidget {
               padding: const EdgeInsets.all(15.0),
               child: Text(
                 label,
-                style: TextStyles.activeMenu(context),
+                style: AppTextStyles.tab(context),
               ),
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hc_web/shared/design/styles.dart';
 
 import '../design/theme.dart';
 
@@ -9,7 +10,7 @@ class AppTabBar extends StatelessWidget {
     required this.tabs,
     this.onTap,
     this.showIndicator = true,
-    this.fontSize = FontSizes.body,
+    this.textStyle,
     this.showDivider = true,
   });
 
@@ -18,17 +19,13 @@ class AppTabBar extends StatelessWidget {
   final void Function(int)? onTap;
   final bool showIndicator;
   final bool showDivider;
-  final double fontSize;
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context) {
     return TabBar(
       controller: controller,
-      labelStyle: TextStyle(
-        fontWeight: FontWeight.bold,
-        color: AppColors.text,
-        fontSize: fontSize,
-      ),
+      labelStyle: textStyle ?? AppTextStyles.tab(context),
       unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
       dividerColor: showDivider ? AppColors.divider : AppColors.background,
       indicatorWeight: 4,

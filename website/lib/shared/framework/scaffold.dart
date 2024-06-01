@@ -64,7 +64,7 @@ class _AppScaffoldState extends State<AppScaffold>
                           showDivider: false,
                           controller: null,
                           showIndicator: false,
-                          fontSize: FontSizes.appTitle,
+                          textStyle: AppTextStyles.title(context),
                           tabs: [
                             Tab(
                               child: Row(
@@ -84,9 +84,8 @@ class _AppScaffoldState extends State<AppScaffold>
                           onTap: (_) => push(AppRoutes.home, context),
                         ),
                       ),
-
-                      //Expanded(child: SizedBox()),
                       AppTabBar(
+                        showDivider: false,
                         controller: _controller,
                         tabs: appMenu.map((e) => Tab(text: e.label)).toList(),
                         onTap: (i) {
@@ -103,8 +102,8 @@ class _AppScaffoldState extends State<AppScaffold>
                 ),
                 SizedBox(height: 20),
                 AppText(
-                  'Screen toys for emotional and social growth.',
-                  style: TextStyles.subLine(context),
+                  'Screen toys to foster emotional and social skills.',
+                  style: AppTextStyles.subLine(context),
                 ),
               ],
             ),
