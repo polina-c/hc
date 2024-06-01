@@ -32,7 +32,8 @@ flutter:
     - assets/images/toys/mira_gosha.png
     - assets/images/toys/pluck_it.webp
     - assets/images/toys/daniel.webp
-    - assets/images/toys/sesame.webp
+    - assets/images/toys/sesame_movie.png
+    - assets/images/toys/sesame_game.webp
     - assets/images/toys/wisdom.webp
     - assets/images/toys/zoo.png
     - assets/images/home/learning-kids-with-father.jpg

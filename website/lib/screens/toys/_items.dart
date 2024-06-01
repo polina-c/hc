@@ -2,6 +2,18 @@ enum ToyTypes {
   game,
   tool,
   movie,
+  ;
+
+  String get name {
+    switch (this) {
+      case ToyTypes.game:
+        return 'Games';
+      case ToyTypes.tool:
+        return 'Tools';
+      case ToyTypes.movie:
+        return 'Movies';
+    }
+  }
 }
 
 final items = [
@@ -15,10 +27,12 @@ final items = [
   ),
   Toy(
     title: 'Sesame Street',
-    description: 'Short animations in emotional development',
-    image: 'images/toys/mira_gosha.png',
-    link: 'https://www.youtube.com/@miragosha',
-    iosLink: 'https://www.youtube.com/@miragosha',
+    description: 'Short animations targeting emotional development',
+    image: 'images/toys/sesame_movie.png',
+    link:
+        'https://www.sesamestreet.org/parents/learning-areas/emotional-development',
+    iosLink:
+        'https://www.sesamestreet.org/parents/learning-areas/emotional-development',
     type: ToyTypes.movie,
   ),
   Toy(
@@ -34,7 +48,7 @@ final items = [
   Toy(
     title: 'Breathe, Think, Do with Sesame',
     description: 'Sesame monster is trying to calm down',
-    image: 'images/toys/sesame.webp',
+    image: 'images/toys/sesame_game.webp',
     iosLink:
         'https://apps.apple.com/us/app/breathe-think-do-with-sesame/id721853597',
     link:

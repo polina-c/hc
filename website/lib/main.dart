@@ -11,7 +11,7 @@ const _homeRoute = '/';
 
 final _screens = <String, AppScreen>{
   _homeRoute: homeScreen,
-  '/toys': exploreScreen,
+  '/toys': toysScreen,
   '/team': teamScreen,
 };
 

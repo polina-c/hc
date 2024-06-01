@@ -9,7 +9,7 @@ import '../../shared/bricks/text.dart';
 import '../../shared/framework/screen.dart';
 import '_items.dart';
 
-final exploreScreen = AppScreen((_) => const _Screen());
+final toysScreen = AppScreen((_) => const _Screen());
 
 class _Screen extends StatelessWidget {
   const _Screen();
