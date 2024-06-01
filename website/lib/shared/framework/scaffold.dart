@@ -101,7 +101,7 @@ class _AppScaffoldState extends State<AppScaffold>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 4),
+                SizedBox(height: 14),
                 AppText(
                   'Screen toys to foster emotional and social skills.',
                   style: AppTextStyles.subLine(context),

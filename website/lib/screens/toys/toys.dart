@@ -61,7 +61,7 @@ class _Text extends StatelessWidget {
     return const AppMarkdown('''
 # Explore Toys
 
-We listed games, movies and tools, which aim to foster
+Here we listed games, movies and tools, which aim to foster
 emotional and social skills through
 engaging and interactive activities.
 
