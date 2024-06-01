@@ -5,6 +5,7 @@ import 'package:hc_web/shared/design/theme.dart';
 import '../bricks/tab_bar.dart';
 import '../bricks/text.dart';
 import '../bricks/utils.dart';
+import '../design/border.dart';
 import 'app_structure.dart';
 import 'screen.dart';
 import '../design/styles.dart';
@@ -55,53 +56,55 @@ class _AppScaffoldState extends State<AppScaffold>
 
             title: Column(
               children: [
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 200,
-                      child: AppTabBar(
-                        controller: null,
-                        tabs: [
-                          Tab(
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                ImageIcon(
-                                  AssetImage('assets/images/logo_flipped.png'),
-                                  color: AppColors.logo,
-                                ),
-                                const SizedBox(width: 8),
-                                Text('Happy Creek'),
-                              ],
+                Underlined(
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: AppTabBar(
+                          showDivider: false,
+                          controller: null,
+                          showIndicator: false,
+                          fontSize: FontSizes.appTitle,
+                          tabs: [
+                            Tab(
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  ImageIcon(
+                                    AssetImage(
+                                        'assets/images/logo_flipped.png'),
+                                    color: AppColors.logo,
+                                  ),
+                                  const SizedBox(width: 8),
+                                  Text('Happy Creek'),
+                                ],
+                              ),
                             ),
-                          )
-                        ],
-                        onTap: null,
+                          ],
+                          onTap: (_) => push(AppRoutes.home, context),
+                        ),
                       ),
-                    ),
 
-                    Expanded(child: SizedBox()),
-                    AppTabBar(
-                      controller: _controller,
-                      tabs: appMenu.map((e) => Tab(text: e.label)).toList(),
-                      onTap: (i) {
-                        final route = appMenu[i].route;
-                        push(route, context);
-                      },
-                    ),
-                    // if (hamburger)
-                    //   _Hamburger(widget.route)
-                    // else
-                    //   _Menu(widget.route),
-                  ],
-                ),
-                //Divider(color: AppColors.divider, thickness: 1),
-                Align(
-                  alignment: Alignment.center,
-                  child: AppText(
-                    'Screen toys for emotional and social growth.',
-                    style: TextStyles.subLine(context),
+                      //Expanded(child: SizedBox()),
+                      AppTabBar(
+                        controller: _controller,
+                        tabs: appMenu.map((e) => Tab(text: e.label)).toList(),
+                        onTap: (i) {
+                          final route = appMenu[i].route;
+                          push(route, context);
+                        },
+                      ),
+                      // if (hamburger)
+                      //   _Hamburger(widget.route)
+                      // else
+                      //   _Menu(widget.route),
+                    ],
                   ),
+                ),
+                SizedBox(height: 20),
+                AppText(
+                  'Screen toys for emotional and social growth.',
+                  style: TextStyles.subLine(context),
                 ),
               ],
             ),

@@ -15,7 +15,7 @@ class AppImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: width,
-      child: Bordered(
+      child: RoundBorder(
         child: Image.asset(path),
       ),
     );
