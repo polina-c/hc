@@ -73,10 +73,14 @@ class _Cards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      spacing: 20,
-      runSpacing: 20,
-      children: items.map((i) => _Card(i)).toList(),
+    return Column(
+      children: [
+        Wrap(
+          spacing: 20,
+          runSpacing: 20,
+          children: items.map((i) => _Card(i)).toList(),
+        ),
+      ],
     );
   }
 }
