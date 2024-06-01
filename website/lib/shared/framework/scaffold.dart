@@ -44,6 +44,7 @@ class _AppScaffoldState extends State<AppScaffold>
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+    bool hamburger = screenWidth < 600;
 
     return new DefaultTextStyle(
       style: new TextStyle(
@@ -84,19 +85,10 @@ class _AppScaffoldState extends State<AppScaffold>
                         onTap: (_) => push(AppRoutes.home, context),
                       ),
                     ),
-                    AppTabBar(
-                      showDivider: false,
-                      controller: _menuTabController,
-                      tabs: appMenu.map((e) => Tab(text: e.label)).toList(),
-                      onTap: (i) {
-                        final route = appMenu[i].route;
-                        push(route, context);
-                      },
-                    ),
-                    // if (hamburger)
-                    //   _Hamburger(widget.route)
-                    // else
-                    //   _Menu(widget.route),
+                    if (hamburger)
+                      _Hamburger(widget.route)
+                    else
+                      _Menu(_menuTabController, widget.route),
                   ],
                 ),
               ),
@@ -130,51 +122,50 @@ class _AppScaffoldState extends State<AppScaffold>
   }
 }
 
-// class _Menu extends StatelessWidget {
-//   const _Menu(this.route);
+class _Menu extends StatelessWidget {
+  const _Menu(this.controller, this.route);
 
-//   final String route;
+  final String route;
+  final TabController controller;
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Wrap(
-//       children: appMenu.entries
-//           .map(
-//             (e) => _MenuItem(
-//               route: e.key,
-//               selected: route,
-//               displayName: e.value,
-//             ),
-//           )
-//           .toList(),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return AppTabBar(
+      showDivider: false,
+      controller: controller,
+      tabs: appMenu.map((e) => Tab(text: e.label)).toList(),
+      onTap: (i) {
+        final route = appMenu[i].route;
+        push(route, context);
+      },
+    );
+  }
+}
 
-// class _Hamburger extends StatelessWidget {
-//   const _Hamburger(this.route);
+class _Hamburger extends StatelessWidget {
+  const _Hamburger(this.route);
 
-//   final String route;
+  final String route;
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return PopupMenuButton<String>(
-//       icon: Icon(Icons.more_vert),
-//       itemBuilder: (BuildContext context) {
-//         return appMenu.entries.map((e) {
-//           return PopupMenuItem<String>(
-//             value: 'menuItem',
-//             child: _MenuItem(
-//               route: e.key,
-//               selected: route,
-//               displayName: e.value,
-//             ),
-//           );
-//         }).toList();
-//       },
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return PopupMenuButton<String>(
+      icon: Icon(Icons.more_vert),
+      itemBuilder: (BuildContext context) {
+        return appMenu.map((e) {
+          return PopupMenuItem<String>(
+            value: 'menuItem',
+            child: _MenuItem(
+              route: e.route,
+              selected: route,
+              displayName: e.label,
+            ),
+          );
+        }).toList();
+      },
+    );
+  }
+}
 
 class _MenuItem extends StatelessWidget {
   const _MenuItem({
