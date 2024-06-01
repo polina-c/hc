@@ -16,9 +16,20 @@ Pick and assign to yourself one of the [not assigned issues](https://github.com/
 
 ### Hosting
 
-Run `firebase deploy` to deploy code to https://happycreekweb.web.app/.
+To deploy code to https://happycreekweb.web.app/ (aka http://happycreek.com):
+
+```
+firebase deploy --only hosting:preview
+```
+
+To deploy code to https://happycreekweb-preview.web.app/:
+
+```
+firebase deploy --only hosting:preview
+```
 
 Firebase project: https://console.firebase.google.com/u/2/project/happycreekweb/hosting/sites/happycreekweb
+About deployment targets: https://firebase.google.com/docs/cli/targets
 
 ### Generate icon
 

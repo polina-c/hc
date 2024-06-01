@@ -1,5 +1,19 @@
 {
   "projects": {
     "default": "happycreekweb"
-  }
+  },
+  "targets": {
+    "happycreekweb": {
+      "hosting": {
+        "preview": [
+          "happycreekweb-preview"
+        ],
+        "release": [
+          "happycreekweb"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
