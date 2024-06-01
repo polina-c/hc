@@ -81,7 +81,6 @@ class _CardsState extends State<_Cards> with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _controller = TabController(length: ToyTypes.values.length, vsync: this);
   }
@@ -99,6 +98,8 @@ class _CardsState extends State<_Cards> with SingleTickerProviderStateMixin {
       dividerColor: AppColors.divider,
     );
 
+    final type = ToyTypes.values[_controller.index];
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: Column(
@@ -108,7 +109,10 @@ class _CardsState extends State<_Cards> with SingleTickerProviderStateMixin {
           Wrap(
             spacing: 20,
             runSpacing: 20,
-            children: items.map((i) => _Card(i)).toList(),
+            children: items
+                .where((i) => i.type == type)
+                .map((i) => _Card(i))
+                .toList(),
           ),
         ],
       ),

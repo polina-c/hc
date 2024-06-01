@@ -1,7 +1,7 @@
 enum ToyTypes {
+  movie,
   game,
   tool,
-  movie,
   ;
 
   String get name {
