@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hc_web/shared/bricks/fab.dart';
 import 'package:hc_web/shared/bricks/utils.dart';
+import 'package:hc_web/shared/design/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../shared/bricks/card.dart';
@@ -88,10 +89,9 @@ class _CardsState extends State<_Cards> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final tabBar = new AppTabBar(
+      indicatorColor: AppColors.tabSecondary,
       controller: _controller,
-      onTap: (value) {
-        setState(() {});
-      },
+      onTap: (value) => setState(() {}),
       tabs: ToyTypes.values.map((t) => Tab(text: t.name)).toList(),
     );
 

@@ -9,7 +9,7 @@ class AppTabBar extends StatelessWidget {
     required this.controller,
     required this.tabs,
     this.onTap,
-    this.showIndicator = true,
+    this.indicatorColor = AppColors.primary,
     this.textStyle,
     this.showDivider = true,
   });
@@ -17,7 +17,7 @@ class AppTabBar extends StatelessWidget {
   final TabController? controller;
   final List<Widget> tabs;
   final void Function(int)? onTap;
-  final bool showIndicator;
+  final Color? indicatorColor;
   final bool showDivider;
   final TextStyle? textStyle;
 
@@ -29,7 +29,7 @@ class AppTabBar extends StatelessWidget {
       unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
       dividerColor: showDivider ? AppColors.divider : AppColors.background,
       indicatorWeight: 4,
-      indicatorColor: showIndicator ? AppColors.primary : AppColors.background,
+      indicatorColor: indicatorColor ?? AppColors.background,
       tabs: tabs,
       tabAlignment: TabAlignment.center,
       onTap: onTap,

@@ -65,7 +65,7 @@ class _AppScaffoldState extends State<AppScaffold>
                       child: AppTabBar(
                         showDivider: false,
                         controller: _titleTabController,
-                        showIndicator: false,
+                        indicatorColor: null,
                         textStyle: AppTextStyles.title(context),
                         tabs: [
                           Tab(
