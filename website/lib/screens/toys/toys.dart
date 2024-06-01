@@ -6,6 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../shared/bricks/card.dart';
 import '../../shared/bricks/layout.dart';
+import '../../shared/bricks/tab_bar.dart';
 import '../../shared/bricks/text.dart';
 import '../../shared/framework/screen.dart';
 import '_items.dart';
@@ -87,15 +88,12 @@ class _CardsState extends State<_Cards> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    final tabBar = new TabBar(
+    final tabBar = new AppTabBar(
       controller: _controller,
       onTap: (value) {
         setState(() {});
       },
-      labelStyle: TextStyle(fontWeight: FontWeight.bold, color: AppColors.text),
-      unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
       tabs: ToyTypes.values.map((t) => Tab(text: t.name)).toList(),
-      dividerColor: AppColors.divider,
     );
 
     final type = ToyTypes.values[_controller.index];

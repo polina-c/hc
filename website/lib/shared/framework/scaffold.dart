@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hc_web/shared/design/theme.dart';
 
+import '../bricks/tab_bar.dart';
 import '../bricks/text.dart';
 import '../bricks/utils.dart';
 import 'app_structure.dart';
@@ -56,30 +57,40 @@ class _AppScaffoldState extends State<AppScaffold>
               children: [
                 Row(
                   children: [
-                    ImageIcon(
-                      AssetImage('assets/images/logo_flipped.png'),
-                      color: AppColors.logo,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            ImageIcon(
+                              AssetImage('assets/images/logo_flipped.png'),
+                              color: AppColors.logo,
+                            ),
+                            _AppBarItem(
+                              text: 'Happy Creek',
+                              type: AppBarTypes.title,
+                              onPressed: widget.route == AppRoutes.home
+                                  ? null
+                                  : () => push(AppRoutes.home, context),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 11,
+                        ),
+                        SizedBox(
+                          width: 300,
+                          child:
+                              Divider(color: AppColors.divider, thickness: 1),
+                        ),
+                      ],
                     ),
-                    _AppBarItem(
-                      text: 'Happy Creek',
-                      type: AppBarTypes.title,
-                      onPressed: widget.route == AppRoutes.home
-                          ? null
-                          : () => push(AppRoutes.home, context),
-                    ),
+
                     Expanded(child: SizedBox()),
-                    TabBar(
+                    AppTabBar(
                       controller: _controller,
-                      labelStyle: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.text,
-                      ),
-                      unselectedLabelStyle:
-                          TextStyle(fontWeight: FontWeight.normal),
-                      dividerColor: AppColors.background,
-                      indicatorWeight: 4,
                       tabs: appMenu.map((e) => Tab(text: e.label)).toList(),
-                      tabAlignment: TabAlignment.center,
                       onTap: (i) {
                         final route = appMenu[i].route;
                         push(route, context);
@@ -91,12 +102,12 @@ class _AppScaffoldState extends State<AppScaffold>
                     //   _Menu(widget.route),
                   ],
                 ),
-                Divider(color: AppColors.divider, thickness: 1),
-                Center(
+                //Divider(color: AppColors.divider, thickness: 1),
+                Align(
+                  alignment: Alignment.center,
                   child: AppText(
                     'Screen toys for emotional and social growth.',
                     style: TextStyles.subLine(context),
-                    textAlign: TextAlign.center,
                   ),
                 ),
               ],
