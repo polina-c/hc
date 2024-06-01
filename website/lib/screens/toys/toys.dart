@@ -42,7 +42,7 @@ class ShareFab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Fab(
       question:
-          'Did something from this list worked for you?\nDid we miss something?\nDo you have new tool ideas? feedback?',
+          'Did something work great for you?\nDid we miss something?\nDo you have new toy idea? feedback?',
       label: 'Share',
       callback: () => launchUrl(
         Uri.parse('https://forms.gle/GVBRUABAPEHpEQj97'),
