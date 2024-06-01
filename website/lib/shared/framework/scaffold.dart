@@ -27,20 +27,23 @@ class AppScaffold extends StatefulWidget {
 }
 
 class _AppScaffoldState extends State<AppScaffold>
-    with SingleTickerProviderStateMixin {
-  late TabController _controller;
+    with TickerProviderStateMixin {
+  late TabController _menuTabController;
+  late TabController _titleTabController;
 
   @override
   void initState() {
     super.initState();
-    _controller = TabController(length: 3, vsync: this);
-    _controller.index = appMenu.indexWhere((e) => e.route == widget.route);
+    _titleTabController = TabController(length: 1, vsync: this);
+
+    _menuTabController = TabController(length: appMenu.length, vsync: this);
+    _menuTabController.index =
+        appMenu.indexWhere((e) => e.route == widget.route);
   }
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final bool hamburger = screenWidth < 600;
 
     return new DefaultTextStyle(
       style: new TextStyle(
@@ -48,81 +51,77 @@ class _AppScaffoldState extends State<AppScaffold>
         fontSize: FontSizes.body,
         color: AppColors.text,
       ),
-      child: DefaultTabController(
-        length: 3,
-        child: Scaffold(
-          appBar: AppBar(
-            toolbarHeight: 140,
+      child: Scaffold(
+        appBar: AppBar(
+          toolbarHeight: 140,
 
-            title: Column(
-              children: [
-                Underlined(
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: AppTabBar(
-                          showDivider: false,
-                          controller: null,
-                          showIndicator: false,
-                          textStyle: AppTextStyles.title(context),
-                          tabs: [
-                            Tab(
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  ImageIcon(
-                                    AssetImage(
-                                        'assets/images/logo_flipped.png'),
-                                    color: AppColors.logo,
-                                  ),
-                                  const SizedBox(width: 8),
-                                  Text('Happy Creek'),
-                                ],
-                              ),
-                            ),
-                          ],
-                          onTap: (_) => push(AppRoutes.home, context),
-                        ),
-                      ),
-                      AppTabBar(
+          title: Column(
+            children: [
+              Underlined(
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: AppTabBar(
                         showDivider: false,
-                        controller: _controller,
-                        tabs: appMenu.map((e) => Tab(text: e.label)).toList(),
-                        onTap: (i) {
-                          final route = appMenu[i].route;
-                          push(route, context);
-                        },
+                        controller: _titleTabController,
+                        showIndicator: false,
+                        textStyle: AppTextStyles.title(context),
+                        tabs: [
+                          Tab(
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                ImageIcon(
+                                  AssetImage('assets/images/logo_flipped.png'),
+                                  color: AppColors.logo,
+                                ),
+                                const SizedBox(width: 8),
+                                Text('Happy Creek'),
+                              ],
+                            ),
+                          ),
+                        ],
+                        onTap: (_) => push(AppRoutes.home, context),
                       ),
-                      // if (hamburger)
-                      //   _Hamburger(widget.route)
-                      // else
-                      //   _Menu(widget.route),
-                    ],
-                  ),
+                    ),
+                    AppTabBar(
+                      showDivider: false,
+                      controller: _menuTabController,
+                      tabs: appMenu.map((e) => Tab(text: e.label)).toList(),
+                      onTap: (i) {
+                        final route = appMenu[i].route;
+                        push(route, context);
+                      },
+                    ),
+                    // if (hamburger)
+                    //   _Hamburger(widget.route)
+                    // else
+                    //   _Menu(widget.route),
+                  ],
                 ),
-                SizedBox(height: 20),
-                AppText(
-                  'Screen toys to foster emotional and social skills.',
-                  style: AppTextStyles.subLine(context),
-                ),
-              ],
-            ),
-            centerTitle: false,
-            automaticallyImplyLeading: false, // Remove back button
-            backgroundColor: AppColors.background,
-          ),
-          body: SingleChildScrollView(
-            child: Center(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const SizedBox(height: 20),
-                  widget.screen.content(context),
-                  const SizedBox(height: Sizes.paddingAfterBody),
-                  Image.asset('${imagePath}images/ds.png'),
-                  Text('${defaultTargetPlatform.name}, $_version'),
-                ],
               ),
+              SizedBox(height: 10),
+              AppText(
+                'Screen toys to foster emotional and social skills.',
+                style: AppTextStyles.subLine(context),
+              ),
+            ],
+          ),
+          centerTitle: false,
+          automaticallyImplyLeading: false, // Remove back button
+          backgroundColor: AppColors.background,
+        ),
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(height: 20),
+                widget.screen.content(context),
+                const SizedBox(height: Sizes.paddingAfterBody),
+                Image.asset('${imagePath}images/ds.png'),
+                Text('${defaultTargetPlatform.name}, $_version'),
+              ],
             ),
           ),
         ),

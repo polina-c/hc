@@ -16,11 +16,11 @@ final _screens = <String, AppScreen>{
 };
 
 void main() {
-  runApp(const _MainApp());
+  runApp(const MainApp());
 }
 
-class _MainApp extends StatelessWidget {
-  const _MainApp();
+class MainApp extends StatelessWidget {
+  const MainApp();
 
   @override
   Widget build(BuildContext context) {
