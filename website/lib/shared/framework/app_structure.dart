@@ -13,11 +13,18 @@ class FeatureFlags {
   // static const bool exploreScreen = kExperiments;
 }
 
-const appMenu = {
-  AppRoutes.home: 'Home',
-  AppRoutes.toys: 'Toys',
-  AppRoutes.team: 'Team',
-};
+class AppMenuItem {
+  const AppMenuItem(this.route, this.label);
+
+  final String route;
+  final String label;
+}
+
+const appMenu = [
+  AppMenuItem(AppRoutes.home, 'Home'),
+  AppMenuItem(AppRoutes.toys, 'Toys'),
+  AppMenuItem(AppRoutes.team, 'Team'),
+];
 
 void push(String route, BuildContext context) {
   Navigator.of(context).pushNamed(route);

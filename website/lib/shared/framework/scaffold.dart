@@ -10,7 +10,7 @@ import '../design/styles.dart';
 
 const _version = 9;
 
-class AppScaffold extends StatelessWidget {
+class AppScaffold extends StatefulWidget {
   const AppScaffold(
     this.route,
     this.screen, {
@@ -19,6 +19,21 @@ class AppScaffold extends StatelessWidget {
 
   final AppScreen screen;
   final String route;
+
+  @override
+  State<AppScaffold> createState() => _AppScaffoldState();
+}
+
+class _AppScaffoldState extends State<AppScaffold>
+    with SingleTickerProviderStateMixin {
+  late TabController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TabController(length: 3, vsync: this);
+    _controller.index = appMenu.indexWhere((e) => e.route == widget.route);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,53 +46,77 @@ class AppScaffold extends StatelessWidget {
         fontSize: FontSizes.body,
         color: AppColors.text,
       ),
-      child: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 140,
-          title: Column(
-            children: [
-              Row(
+      child: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            toolbarHeight: 140,
+
+            title: Column(
+              children: [
+                Row(
+                  children: [
+                    ImageIcon(
+                      AssetImage('assets/images/logo_flipped.png'),
+                      color: AppColors.logo,
+                    ),
+                    _AppBarItem(
+                      text: 'Happy Creek',
+                      type: AppBarTypes.title,
+                      onPressed: widget.route == AppRoutes.home
+                          ? null
+                          : () => push(AppRoutes.home, context),
+                    ),
+                    Expanded(child: SizedBox()),
+                    TabBar(
+                      controller: _controller,
+                      labelStyle: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.text,
+                      ),
+                      unselectedLabelStyle:
+                          TextStyle(fontWeight: FontWeight.normal),
+                      dividerColor: AppColors.background,
+                      indicatorWeight: 4,
+                      tabs: appMenu.map((e) => Tab(text: e.label)).toList(),
+                      tabAlignment: TabAlignment.center,
+                      onTap: (i) {
+                        final route = appMenu[i].route;
+                        push(route, context);
+                      },
+                    ),
+                    // if (hamburger)
+                    //   _Hamburger(widget.route)
+                    // else
+                    //   _Menu(widget.route),
+                  ],
+                ),
+                Divider(color: AppColors.divider, thickness: 1),
+                Center(
+                  child: AppText(
+                    'Screen toys for emotional and social growth.',
+                    style: TextStyles.subLine(context),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
+            ),
+            centerTitle: false,
+            automaticallyImplyLeading: false, // Remove back button
+            backgroundColor: AppColors.background,
+          ),
+          body: SingleChildScrollView(
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ImageIcon(
-                    AssetImage('assets/images/logo_flipped.png'),
-                    color: AppColors.logo,
-                  ),
-                  _AppBarItem(
-                    text: 'Happy Creek',
-                    type: AppBarTypes.title,
-                    onPressed: route == AppRoutes.home
-                        ? null
-                        : () => push(AppRoutes.home, context),
-                  ),
-                  Expanded(child: SizedBox()),
-                  if (hamburger) _Hamburger(route) else _Menu(route),
+                  const SizedBox(height: 20),
+                  widget.screen.content(context),
+                  const SizedBox(height: Sizes.paddingAfterBody),
+                  Image.asset('${imagePath}images/ds.png'),
+                  Text('${defaultTargetPlatform.name}, $_version'),
                 ],
               ),
-              Divider(color: AppColors.divider, thickness: 1),
-              Center(
-                child: AppText(
-                  'Screen toys for emotional and social growth.',
-                  style: TextStyles.subLine(context),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ],
-          ),
-          centerTitle: false,
-          automaticallyImplyLeading: false, // Remove back button
-          backgroundColor: AppColors.background,
-        ),
-        body: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const SizedBox(height: 20),
-                screen.content(context),
-                const SizedBox(height: Sizes.paddingAfterBody),
-                Image.asset('${imagePath}images/ds.png'),
-                Text('${defaultTargetPlatform.name}, $_version'),
-              ],
             ),
           ),
         ),
@@ -86,51 +125,51 @@ class AppScaffold extends StatelessWidget {
   }
 }
 
-class _Menu extends StatelessWidget {
-  const _Menu(this.route);
+// class _Menu extends StatelessWidget {
+//   const _Menu(this.route);
 
-  final String route;
+//   final String route;
 
-  @override
-  Widget build(BuildContext context) {
-    return Wrap(
-      children: appMenu.entries
-          .map(
-            (e) => _MenuItem(
-              route: e.key,
-              selected: route,
-              displayName: e.value,
-            ),
-          )
-          .toList(),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Wrap(
+//       children: appMenu.entries
+//           .map(
+//             (e) => _MenuItem(
+//               route: e.key,
+//               selected: route,
+//               displayName: e.value,
+//             ),
+//           )
+//           .toList(),
+//     );
+//   }
+// }
 
-class _Hamburger extends StatelessWidget {
-  const _Hamburger(this.route);
+// class _Hamburger extends StatelessWidget {
+//   const _Hamburger(this.route);
 
-  final String route;
+//   final String route;
 
-  @override
-  Widget build(BuildContext context) {
-    return PopupMenuButton<String>(
-      icon: Icon(Icons.more_vert),
-      itemBuilder: (BuildContext context) {
-        return appMenu.entries.map((e) {
-          return PopupMenuItem<String>(
-            value: 'menuItem',
-            child: _MenuItem(
-              route: e.key,
-              selected: route,
-              displayName: e.value,
-            ),
-          );
-        }).toList();
-      },
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return PopupMenuButton<String>(
+//       icon: Icon(Icons.more_vert),
+//       itemBuilder: (BuildContext context) {
+//         return appMenu.entries.map((e) {
+//           return PopupMenuItem<String>(
+//             value: 'menuItem',
+//             child: _MenuItem(
+//               route: e.key,
+//               selected: route,
+//               displayName: e.value,
+//             ),
+//           );
+//         }).toList();
+//       },
+//     );
+//   }
+// }
 
 class _MenuItem extends StatelessWidget {
   const _MenuItem({
