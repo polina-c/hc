@@ -59,8 +59,8 @@ class _Text extends StatelessWidget {
     return const AppMarkdown('''
 # Explore Toys
 
-We listed games, movies and tools, targeting development
-of emotional growth and social skills through
+We listed games, movies and tools, targeting
+of emotional and social skills through
 engaging and interactive activities.
 
 Choose what you like and what works for you.
