@@ -54,8 +54,6 @@ class _AppScaffoldState extends State<AppScaffold>
       ),
       child: Scaffold(
         appBar: AppBar(
-          toolbarHeight: 140,
-
           title: Column(
             children: [
               Underlined(
@@ -92,11 +90,6 @@ class _AppScaffoldState extends State<AppScaffold>
                   ],
                 ),
               ),
-              SizedBox(height: 10),
-              AppText(
-                'Screen toys to foster emotional and social skills.',
-                style: AppTextStyles.subLine(context),
-              ),
             ],
           ),
           centerTitle: false,
@@ -108,7 +101,12 @@ class _AppScaffoldState extends State<AppScaffold>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(height: 20),
+                SizedBox(height: 4),
+                AppText(
+                  'Screen toys to foster emotional and social skills.',
+                  style: AppTextStyles.subLine(context),
+                ),
+                const SizedBox(height: 24),
                 widget.screen.content(context),
                 const SizedBox(height: Sizes.paddingAfterBody),
                 Image.asset('${imagePath}images/ds.png'),

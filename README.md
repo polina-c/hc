@@ -19,7 +19,7 @@ Pick and assign to yourself one of the [not assigned issues](https://github.com/
 To deploy code to https://happycreekweb.web.app/ (aka http://happycreek.com):
 
 ```
-firebase deploy --only hosting:preview
+firebase deploy --only hosting:release
 ```
 
 To deploy code to https://happycreekweb-preview.web.app/:
