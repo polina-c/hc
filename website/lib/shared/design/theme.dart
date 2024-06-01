@@ -8,7 +8,7 @@ class AppColors {
   static const link = Colors.blueAccent;
   static const primary = Colors.amber; // #FFC107
   static const background = Colors.white;
-  static final subLine = Colors.amber.shade700;
+  static final subLine = Colors.blue.shade700;
   static final card = const Color.fromARGB(255, 161, 232, 255);
 
   static final divider = Colors.grey.shade200;
