@@ -1,6 +1,8 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hc_web/screens/toys/toys.dart';
 
+import 'firebase_options.dart';
 import 'shared/design/theme.dart';
 import 'screens/home.dart';
 import 'screens/team.dart';
@@ -15,7 +17,10 @@ final _screens = <String, AppScreen>{
   '/team': teamScreen,
 };
 
-void main() {
+void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MainApp());
 }
 

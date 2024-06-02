@@ -55,7 +55,7 @@ class _Text1 extends StatelessWidget {
 
 \v
 
-A collection of games movies and tools designed to create
+A collection of games, movies and tools designed to create
 **quality playtime**.
 They aim to foster **learning, emotional development,
 and social growth** in a fun and engaging manner.

@@ -31,6 +31,10 @@ firebase deploy --only hosting:preview
 Firebase project: https://console.firebase.google.com/u/2/project/happycreekweb/hosting/sites/happycreekweb
 About deployment targets: https://firebase.google.com/docs/cli/targets
 
+### Authentication
+
+See https://firebase.google.com/docs/flutter/setup?hl=en&platform=web
+
 ### Generate icon
 
 Run:
