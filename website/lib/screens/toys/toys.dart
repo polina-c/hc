@@ -106,10 +106,8 @@ class _CardsState extends State<_Cards> with SingleTickerProviderStateMixin {
           Wrap(
             spacing: 20,
             runSpacing: 20,
-            children: items
-                .where((i) => i.type == type)
-                .map((i) => _Card(i))
-                .toList(),
+            children:
+                items.where((i) => i.type == type).map(_Card.new).toList(),
           ),
         ],
       ),

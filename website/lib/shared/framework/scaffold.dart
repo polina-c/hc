@@ -1,15 +1,15 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:hc_web/shared/design/theme.dart';
 import 'package:url_launcher/link.dart';
 
 import '../bricks/tab_bar.dart';
 import '../bricks/text.dart';
 import '../bricks/utils.dart';
 import '../design/border.dart';
+import '../design/styles.dart';
+import '../design/theme.dart';
 import 'app_structure.dart';
 import 'screen.dart';
-import '../design/styles.dart';
 
 const _version = 1;
 
@@ -45,10 +45,10 @@ class _AppScaffoldState extends State<AppScaffold>
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    bool hamburger = screenWidth < 600;
+    var hamburger = screenWidth < 600;
 
-    return new DefaultTextStyle(
-      style: new TextStyle(
+    return DefaultTextStyle(
+      style: const TextStyle(
         inherit: true,
         fontSize: FontSizes.body,
         color: AppColors.text,
@@ -72,11 +72,13 @@ class _AppScaffoldState extends State<AppScaffold>
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 ImageIcon(
-                                  AssetImage('assets/images/logo_flipped.png'),
+                                  const AssetImage(
+                                    'assets/images/logo_flipped.png',
+                                  ),
                                   color: AppColors.logo,
                                 ),
                                 const SizedBox(width: 8),
-                                Text('Happy Creek'),
+                                const Text('Happy Creek'),
                               ],
                             ),
                           ),
@@ -102,7 +104,7 @@ class _AppScaffoldState extends State<AppScaffold>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 14),
+                const SizedBox(height: 14),
                 AppText(
                   'Screen toys to foster emotional and social skills.',
                   style: AppTextStyles.subLine(context),
@@ -114,13 +116,14 @@ class _AppScaffoldState extends State<AppScaffold>
                 Image.asset('${imagePath}images/ds.png'),
                 Text('${defaultTargetPlatform.name}, $_version'),
                 Link(
-                    uri: Uri.parse('http://polina-c.com'),
-                    builder: (context, followLink) {
-                      return TextButton(
-                        onPressed: followLink,
-                        child: Text('polina-c'),
-                      );
-                    }),
+                  uri: Uri.parse('http://polina-c.com'),
+                  builder: (context, followLink) {
+                    return TextButton(
+                      onPressed: followLink,
+                      child: const Text('polina-c'),
+                    );
+                  },
+                ),
               ],
             ),
           ),
@@ -158,7 +161,7 @@ class _Hamburger extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton<String>(
-      icon: Icon(Icons.more_vert),
+      icon: const Icon(Icons.more_vert),
       itemBuilder: (BuildContext context) {
         return appMenu.map((e) {
           return PopupMenuItem<String>(
