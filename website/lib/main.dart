@@ -1,20 +1,19 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:hc_web/screens/toys/toys.dart';
 
 import 'firebase_options.dart';
-import 'shared/design/theme.dart';
 import 'screens/home.dart';
 import 'screens/team.dart';
-import 'shared/framework/screen.dart';
+import 'screens/toys/toys.dart';
+import 'shared/design/theme.dart';
+import 'shared/framework/app_structure.dart';
 import 'shared/framework/scaffold.dart';
-
-const _homeRoute = '/';
+import 'shared/framework/screen.dart';
 
 final _screens = <String, AppScreen>{
-  _homeRoute: homeScreen,
-  '/toys': toysScreen,
-  '/team': teamScreen,
+  AppRoutes.home: homeScreen,
+  AppRoutes.toys: toysScreen,
+  AppRoutes.team: teamScreen,
 };
 
 void main() async {
@@ -32,10 +31,10 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: 'Happy Creek',
       theme: appTheme,
-      initialRoute: _homeRoute,
+      initialRoute: AppRoutes.home,
       // Using this instead of [routes] to turn off animation.
       onGenerateRoute: (settings) {
-        final route = settings.name ?? _homeRoute;
+        final route = settings.name ?? AppRoutes.home;
         return PageRouteBuilder(
           pageBuilder: (context, __, ___) =>
               AppScaffold(route, _screens[route] ?? homeScreen),

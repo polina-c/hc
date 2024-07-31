@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hc_web/shared/bricks/layout.dart';
 
 import '../shared/bricks/image.dart';
+import '../shared/bricks/layout.dart';
 import '../shared/bricks/text.dart';
 import '../shared/framework/screen.dart';
 
@@ -18,23 +18,23 @@ class _Screen extends StatelessWidget {
         Wrap(
           alignment: WrapAlignment.center,
           children: [
-            AppColumn(
+            const AppColumn(
               width: 400,
               child: AppMarkdown('''
 # Our Team
 
-The team is led by [Polina Cherkasova](https://twitter.com/PolinaCC), software engineer, creator of
+The team is led by [Polina Cherkasova](https://polina-c.com), software engineer, creator of
 [layerlens](https://pub.dev/packages/layerlens)
 , member of [Flutter](https://flutter.dev/)
 engineering team, mom of grown children,
 participant of many psychological practices, programs and retreats.
                       '''),
             ),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             AppImage(280, 'images/team/team.jpg'),
           ],
         ),
-        AppColumn(
+        const AppColumn(
           child: AppMarkdown(
             '''
 ## Contributors

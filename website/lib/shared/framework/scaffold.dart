@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hc_web/shared/design/theme.dart';
+import 'package:url_launcher/link.dart';
 
 import '../bricks/tab_bar.dart';
 import '../bricks/text.dart';
@@ -10,7 +11,7 @@ import 'app_structure.dart';
 import 'screen.dart';
 import '../design/styles.dart';
 
-const _version = 10;
+const _version = 1;
 
 class AppScaffold extends StatefulWidget {
   const AppScaffold(
@@ -112,6 +113,14 @@ class _AppScaffoldState extends State<AppScaffold>
                 const SizedBox(height: Sizes.paddingAfterBody),
                 Image.asset('${imagePath}images/ds.png'),
                 Text('${defaultTargetPlatform.name}, $_version'),
+                Link(
+                    uri: Uri.parse('http://polina-c.com'),
+                    builder: (context, followLink) {
+                      return TextButton(
+                        onPressed: followLink,
+                        child: Text('polina-c'),
+                      );
+                    }),
               ],
             ),
           ),

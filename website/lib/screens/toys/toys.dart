@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:hc_web/shared/bricks/fab.dart';
-import 'package:hc_web/shared/bricks/utils.dart';
-import 'package:hc_web/shared/design/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../shared/bricks/card.dart';
+import '../../shared/bricks/fab.dart';
 import '../../shared/bricks/layout.dart';
 import '../../shared/bricks/tab_bar.dart';
 import '../../shared/bricks/text.dart';
+import '../../shared/bricks/utils.dart';
+import '../../shared/design/theme.dart';
 import '../../shared/framework/screen.dart';
 import '_items.dart';
 
@@ -18,12 +18,12 @@ class _Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         AppColumn(
           width: 500,
           child: Column(
-            children: const [
+            children: [
               _Text(),
               SizedBox(height: 20),
               ShareFab(),
@@ -43,8 +43,8 @@ class ShareFab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Fab(
-      question:
-          'Did something work great for you?\nDid we miss something?\nDo you have new toy idea? feedback?',
+      question: 'Did something work great for you?\nDid we miss something?\n'
+          'Do you have new toy idea? feedback?',
       label: 'Share',
       callback: () => launchUrl(
         Uri.parse('https://forms.gle/GVBRUABAPEHpEQj97'),
@@ -88,7 +88,7 @@ class _CardsState extends State<_Cards> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    final tabBar = new AppTabBar(
+    final tabBar = AppTabBar(
       indicatorColor: AppColors.tabSecondary,
       controller: _controller,
       onTap: (value) => setState(() {}),
@@ -102,7 +102,7 @@ class _CardsState extends State<_Cards> with SingleTickerProviderStateMixin {
       child: Column(
         children: [
           SizedBox(height: 50, child: tabBar),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           Wrap(
             spacing: 20,
             runSpacing: 20,
@@ -130,7 +130,7 @@ class _Card extends StatelessWidget {
         height: 290,
         width: 500,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -148,15 +148,15 @@ class _Card extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
               item.title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(item.description, softWrap: true),
           ],
         ),

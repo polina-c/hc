@@ -17,7 +17,7 @@ enum ToyTypes {
 }
 
 final items = [
-  Toy(
+  const Toy(
     title: 'Mira and Gosha',
     description: 'Short animations by psychologists',
     image: 'images/toys/mira_gosha.png',
@@ -25,7 +25,7 @@ final items = [
     iosLink: 'https://www.youtube.com/@miragosha',
     type: ToyTypes.movie,
   ),
-  Toy(
+  const Toy(
     title: 'Sesame Street',
     description: 'Short animations targeting emotional development',
     image: 'images/toys/sesame_movie.png',
@@ -35,7 +35,7 @@ final items = [
         'https://www.sesamestreet.org/parents/learning-areas/emotional-development',
     type: ToyTypes.movie,
   ),
-  Toy(
+  const Toy(
     title: 'Daniel Tiger' 's Feelings',
     description: 'Play with Daniel Tiger and toys feelings',
     image: 'images/toys/daniel.webp',
@@ -45,7 +45,7 @@ final items = [
         'https://play.google.com/store/apps/details?id=org.pbskids.dtgrrificfeelings',
     type: ToyTypes.game,
   ),
-  Toy(
+  const Toy(
     title: 'Breathe, Think, Do with Sesame',
     description: 'Sesame monster is trying to calm down',
     image: 'images/toys/sesame_game.webp',
@@ -55,7 +55,7 @@ final items = [
         'https://play.google.com/store/apps/details?id=air.com.sesameworkshop.ResilienceThinkBreathDo',
     type: ToyTypes.game,
   ),
-  Toy(
+  const Toy(
     title: 'Wisdom: The World of Emotions',
     description: 'Recognize and regulate anger in self and others',
     image: 'images/toys/wisdom.webp',
@@ -65,7 +65,7 @@ final items = [
         'https://play.google.com/store/apps/details?id=com.WisdomEnglishunlockA.ipa',
     type: ToyTypes.game,
   ),
-  Toy(
+  const Toy(
     title: 'Feeling Arrow',
     description: 'Control people with arrows of feelings',
     image: 'images/toys/feeling_arrow.webp',
@@ -74,7 +74,7 @@ final items = [
         'https://play.google.com/store/apps/details?id=com.YsoCorp.Feelingarrow',
     type: ToyTypes.game,
   ),
-  Toy(
+  const Toy(
     title: 'Zoo Academy',
     description: 'Social Emotional Game for K-1 Students',
     image: 'images/toys/zoo.png',
@@ -82,7 +82,7 @@ final items = [
     link: 'https://www.centervention.com/zoo-academy/',
     type: ToyTypes.game,
   ),
-  Toy(
+  const Toy(
     title: 'How We Feel',
     description: 'An emotional wellbeing journal',
     image: 'images/toys/how_we_feel.webp',
@@ -91,7 +91,7 @@ final items = [
         'https://play.google.com/store/apps/details?id=org.howwefeel.moodmeter',
     type: ToyTypes.tool,
   ),
-  Toy(
+  const Toy(
     title: 'Pluck It',
     description: 'A weird game about emotions',
     image: 'images/toys/pluck_it.webp',
@@ -101,7 +101,7 @@ final items = [
         'https://play.google.com/store/apps/details?id=com.feelinggame.pluckit',
     type: ToyTypes.game,
   ),
-  Toy(
+  const Toy(
     title: 'Messenger Kids',
     description: 'Messaging controlled by parents',
     image: 'images/toys/messenger.webp',
@@ -109,7 +109,7 @@ final items = [
     link: 'https://play.google.com/store/apps/details?id=com.facebook.talk',
     type: ToyTypes.tool,
   ),
-  Toy(
+  const Toy(
     title: 'IntroDUCKtion',
     description: 'IntroDUCKtion to big feelings',
     image: 'images/toys/introducktion.webp',
@@ -118,7 +118,7 @@ final items = [
     link: 'https://play.google.com/store/apps/details?id=com.introDucktion',
     type: ToyTypes.game,
   ),
-  Toy(
+  const Toy(
     title: 'Peppy Pals',
     description: 'Game to explore emotions',
     image: 'images/toys/peppy_pals.webp',
